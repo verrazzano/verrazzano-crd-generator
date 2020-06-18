@@ -6,8 +6,8 @@
 package coherence
 
 import (
-	v1 "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/informers/externalversions/coherence/v1"
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/informers/externalversions/internalinterfaces"
+	v1 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/informers/externalversions/coherence/v1"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

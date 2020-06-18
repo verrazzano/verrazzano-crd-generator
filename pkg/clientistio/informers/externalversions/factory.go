@@ -10,9 +10,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned"
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/informers/externalversions/internalinterfaces"
-	networkingistioio "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/informers/externalversions/networking.istio.io"
+	versioned "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/informers/externalversions/internalinterfaces"
+	networkingistioio "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/informers/externalversions/networking.istio.io"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

@@ -8,7 +8,7 @@ package externalversions
 import (
 	"fmt"
 
-	v1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1"
+	v1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )

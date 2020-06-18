@@ -6,7 +6,7 @@
 package fake
 
 import (
-	coherencev1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1"
+	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

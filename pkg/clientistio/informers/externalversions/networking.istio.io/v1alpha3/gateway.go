@@ -8,10 +8,10 @@ package v1alpha3
 import (
 	time "time"
 
-	networkingistioiov1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3"
-	versioned "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned"
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/informers/externalversions/internalinterfaces"
-	v1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/listers/networking.istio.io/v1alpha3"
+	networkingistioiov1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3"
+	versioned "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/informers/externalversions/internalinterfaces"
+	v1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/listers/networking.istio.io/v1alpha3"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

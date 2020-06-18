@@ -6,8 +6,8 @@
 package v1
 
 import (
-	v1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1"
-	"github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/scheme"
+	v1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
+	"github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

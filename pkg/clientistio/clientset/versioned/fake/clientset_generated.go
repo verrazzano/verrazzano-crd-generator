@@ -6,9 +6,9 @@
 package fake
 
 import (
-	clientset "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned"
-	networkingv1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3"
-	fakenetworkingv1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3/fake"
+	clientset "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned"
+	networkingv1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3"
+	fakenetworkingv1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

@@ -4,7 +4,7 @@
 package apis
 
 import (
-	v2 "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	v2 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
 )
 
 func init() {

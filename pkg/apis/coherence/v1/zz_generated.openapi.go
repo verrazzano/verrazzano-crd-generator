@@ -14,36 +14,36 @@ import (
 
 func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition {
 	return map[string]common.OpenAPIDefinition{
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec":            schema_pkg_apis_coherence_v1_ApplicationSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatus":          schema_pkg_apis_coherence_v1_ClusterRoleStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatusCondition": schema_pkg_apis_coherence_v1_ClusterRoleStatusCondition(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceCluster":           schema_pkg_apis_coherence_v1_CoherenceCluster(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterSpec":       schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterStatus":     schema_pkg_apis_coherence_v1_CoherenceClusterStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternal":          schema_pkg_apis_coherence_v1_CoherenceInternal(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalSpec":      schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalStatus":    schema_pkg_apis_coherence_v1_CoherenceInternalStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRole":              schema_pkg_apis_coherence_v1_CoherenceRole(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec":          schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleStatus":        schema_pkg_apis_coherence_v1_CoherenceRoleStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec":              schema_pkg_apis_coherence_v1_CoherenceSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.FluentdSpec":                schema_pkg_apis_coherence_v1_FluentdSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec":                  schema_pkg_apis_coherence_v1_ImageSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec":                    schema_pkg_apis_coherence_v1_JVMSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmDebugSpec":               schema_pkg_apis_coherence_v1_JvmDebugSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec":                schema_pkg_apis_coherence_v1_LoggingSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec":              schema_pkg_apis_coherence_v1_NamedPortSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec":                schema_pkg_apis_coherence_v1_NetworkSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec":      schema_pkg_apis_coherence_v1_PersistentStorageSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PodDNSConfig":               schema_pkg_apis_coherence_v1_PodDNSConfig(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpec":                   schema_pkg_apis_coherence_v1_PortSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL":            schema_pkg_apis_coherence_v1_PortSpecWithSSL(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec":         schema_pkg_apis_coherence_v1_ReadinessProbeSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.SSLSpec":                    schema_pkg_apis_coherence_v1_SSLSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingProbe":               schema_pkg_apis_coherence_v1_ScalingProbe(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec":                schema_pkg_apis_coherence_v1_ServiceSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum":                schema_pkg_apis_coherence_v1_StartQuorum(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorumStatus":          schema_pkg_apis_coherence_v1_StartQuorumStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec":            schema_pkg_apis_coherence_v1_ApplicationSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatus":          schema_pkg_apis_coherence_v1_ClusterRoleStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatusCondition": schema_pkg_apis_coherence_v1_ClusterRoleStatusCondition(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceCluster":           schema_pkg_apis_coherence_v1_CoherenceCluster(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterSpec":       schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterStatus":     schema_pkg_apis_coherence_v1_CoherenceClusterStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternal":          schema_pkg_apis_coherence_v1_CoherenceInternal(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalSpec":      schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalStatus":    schema_pkg_apis_coherence_v1_CoherenceInternalStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRole":              schema_pkg_apis_coherence_v1_CoherenceRole(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec":          schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleStatus":        schema_pkg_apis_coherence_v1_CoherenceRoleStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec":              schema_pkg_apis_coherence_v1_CoherenceSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.FluentdSpec":                schema_pkg_apis_coherence_v1_FluentdSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec":                  schema_pkg_apis_coherence_v1_ImageSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec":                    schema_pkg_apis_coherence_v1_JVMSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmDebugSpec":               schema_pkg_apis_coherence_v1_JvmDebugSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec":                schema_pkg_apis_coherence_v1_LoggingSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec":              schema_pkg_apis_coherence_v1_NamedPortSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec":                schema_pkg_apis_coherence_v1_NetworkSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec":      schema_pkg_apis_coherence_v1_PersistentStorageSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PodDNSConfig":               schema_pkg_apis_coherence_v1_PodDNSConfig(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpec":                   schema_pkg_apis_coherence_v1_PortSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL":            schema_pkg_apis_coherence_v1_PortSpecWithSSL(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec":         schema_pkg_apis_coherence_v1_ReadinessProbeSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.SSLSpec":                    schema_pkg_apis_coherence_v1_SSLSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingProbe":               schema_pkg_apis_coherence_v1_ScalingProbe(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec":                schema_pkg_apis_coherence_v1_ServiceSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum":                schema_pkg_apis_coherence_v1_StartQuorum(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorumStatus":          schema_pkg_apis_coherence_v1_StartQuorumStatus(ref),
 	}
 }
 
@@ -176,7 +176,7 @@ func schema_pkg_apis_coherence_v1_ClusterRoleStatus(ref common.ReferenceCallback
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatusCondition"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatusCondition"),
 									},
 								},
 							},
@@ -186,7 +186,7 @@ func schema_pkg_apis_coherence_v1_ClusterRoleStatus(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatusCondition"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatusCondition"},
 	}
 }
 
@@ -246,19 +246,19 @@ func schema_pkg_apis_coherence_v1_CoherenceCluster(ref common.ReferenceCallback)
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterSpec"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterStatus"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceClusterStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -282,7 +282,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference"),
 									},
 								},
 							},
@@ -326,31 +326,31 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 					"application": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The optional application definition",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec"),
 						},
 					},
 					"coherence": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The optional application definition",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec"),
 						},
 					},
 					"coherenceUtils": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The configuration for the Coherence utils image",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec"),
 						},
 					},
 					"logging": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Logging allows configuration of Coherence and java util logging.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec"),
 						},
 					},
 					"jvm": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The JVM specific options",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec"),
 						},
 					},
 					"ports": {
@@ -366,7 +366,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec"),
 									},
 								},
 							},
@@ -401,19 +401,19 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 					"readinessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The readiness probe config to be used for the Pods in this role. ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
 						},
 					},
 					"livenessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The liveness probe config to be used for the Pods in this role. ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
 						},
 					},
 					"scaling": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The configuration to control safe scaling.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec"),
 						},
 					},
 					"resources": {
@@ -572,7 +572,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 					"network": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configure various networks and DNS settings for Pods in this rolw.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec"),
 						},
 					},
 					"startQuorum": {
@@ -588,7 +588,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum"),
 									},
 								},
 							},
@@ -607,7 +607,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec"),
 									},
 								},
 							},
@@ -617,7 +617,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterSpec(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -648,7 +648,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterStatus(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatus"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatus"),
 									},
 								},
 							},
@@ -658,7 +658,7 @@ func schema_pkg_apis_coherence_v1_CoherenceClusterStatus(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatus"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ClusterRoleStatus"},
 	}
 }
 
@@ -692,19 +692,19 @@ func schema_pkg_apis_coherence_v1_CoherenceInternal(ref common.ReferenceCallback
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec contains the specification for a Coherence cluster. The format is the same as the values file for the Coherence Helm chart.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalStatus"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceInternalStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -768,7 +768,7 @@ func schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference"),
 									},
 								},
 							},
@@ -798,31 +798,31 @@ func schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref common.ReferenceCall
 					"application": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The optional application definition",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec"),
 						},
 					},
 					"coherence": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The optional application definition",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec"),
 						},
 					},
 					"coherenceUtils": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The configuration for the Coherence utils image",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec"),
 						},
 					},
 					"logging": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Logging allows configuration of Coherence and java util logging.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec"),
 						},
 					},
 					"jvm": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The JVM specific options",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec"),
 						},
 					},
 					"ports": {
@@ -838,7 +838,7 @@ func schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec"),
 									},
 								},
 							},
@@ -873,19 +873,19 @@ func schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref common.ReferenceCall
 					"readinessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The readiness probe config to be used for the Pods in this role. ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
 						},
 					},
 					"livenessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The liveness probe config to be used for the Pods in this role. ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
 						},
 					},
 					"scaling": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The configuration to control safe scaling.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec"),
 						},
 					},
 					"resources": {
@@ -1044,7 +1044,7 @@ func schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref common.ReferenceCall
 					"network": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configure various networks and DNS settings for Pods in this rolw.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec"),
 						},
 					},
 					"startQuorum": {
@@ -1060,7 +1060,7 @@ func schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum"),
 									},
 								},
 							},
@@ -1071,7 +1071,7 @@ func schema_pkg_apis_coherence_v1_CoherenceInternalSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LocalObjectReference", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -1114,19 +1114,19 @@ func schema_pkg_apis_coherence_v1_CoherenceRole(ref common.ReferenceCallback) co
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleStatus"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceRoleStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1154,31 +1154,31 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref common.ReferenceCallback
 					"application": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The optional application definition",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec"),
 						},
 					},
 					"coherence": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The optional application definition",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec"),
 						},
 					},
 					"coherenceUtils": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The configuration for the Coherence utils image",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec"),
 						},
 					},
 					"logging": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Logging allows configuration of Coherence and java util logging.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec"),
 						},
 					},
 					"jvm": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The JVM specific options",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec"),
 						},
 					},
 					"ports": {
@@ -1194,7 +1194,7 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref common.ReferenceCallback
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec"),
 									},
 								},
 							},
@@ -1229,19 +1229,19 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref common.ReferenceCallback
 					"readinessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The readiness probe config to be used for the Pods in this role. ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
 						},
 					},
 					"livenessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The liveness probe config to be used for the Pods in this role. ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec"),
 						},
 					},
 					"scaling": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The configuration to control safe scaling.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec"),
 						},
 					},
 					"resources": {
@@ -1400,7 +1400,7 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref common.ReferenceCallback
 					"network": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configure various networks and DNS settings for Pods in this rolw.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec"),
 						},
 					},
 					"startQuorum": {
@@ -1416,7 +1416,7 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref common.ReferenceCallback
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum"),
 									},
 								},
 							},
@@ -1426,7 +1426,7 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleSpec(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ApplicationSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.CoherenceSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ImageSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JVMSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.LoggingSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NamedPortSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.NetworkSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ReadinessProbeSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ScalingSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorum", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PersistentVolumeClaim", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -1491,7 +1491,7 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleStatus(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorumStatus"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorumStatus"),
 									},
 								},
 							},
@@ -1502,7 +1502,7 @@ func schema_pkg_apis_coherence_v1_CoherenceRoleStatus(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorumStatus"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.StartQuorumStatus"},
 	}
 }
 
@@ -1558,25 +1558,25 @@ func schema_pkg_apis_coherence_v1_CoherenceSpec(ref common.ReferenceCallback) co
 					"persistence": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Persistence values configure the on-disc data persistence settings. The bool Enabled enables or disabled on disc persistence of data.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec"),
 						},
 					},
 					"snapshot": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Snapshot values configure the on-disc persistence data snapshot (backup) settings. The bool Enabled enables or disabled a different location for persistence snapshot data. If set to false then snapshot files will be written to the same volume configured for persistence data in the Persistence section.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec"),
 						},
 					},
 					"management": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Management configures Coherence management over REST\n  Note: Coherence management over REST will be available in 12.2.1.4.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL"),
 						},
 					},
 					"metrics": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Metrics configures Coherence metrics publishing\n  Note: Coherence metrics publishing will be available in 12.2.1.4.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL"),
 						},
 					},
 					"excludeFromWKA": {
@@ -1590,7 +1590,7 @@ func schema_pkg_apis_coherence_v1_CoherenceSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PersistentStorageSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PortSpecWithSSL"},
 	}
 }
 
@@ -1698,7 +1698,7 @@ func schema_pkg_apis_coherence_v1_JVMSpec(ref common.ReferenceCallback) common.O
 					"debug": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The settings for enabling debug mode in the JVM.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmDebugSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmDebugSpec"),
 						},
 					},
 					"useContainerLimits": {
@@ -1718,7 +1718,7 @@ func schema_pkg_apis_coherence_v1_JVMSpec(ref common.ReferenceCallback) common.O
 					"gc": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Set JVM garbage collector options.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmGarbageCollectorSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmGarbageCollectorSpec"),
 						},
 					},
 					"diagnosticsVolume": {
@@ -1729,20 +1729,20 @@ func schema_pkg_apis_coherence_v1_JVMSpec(ref common.ReferenceCallback) common.O
 					"memory": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configure the JVM memory options.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmMemorySpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmMemorySpec"),
 						},
 					},
 					"jmxmp": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configure JMX using JMXMP.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmJmxmpSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmJmxmpSpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmDebugSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmGarbageCollectorSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmJmxmpSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmMemorySpec", "k8s.io/api/core/v1.VolumeSource"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmDebugSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmGarbageCollectorSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmJmxmpSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.JvmMemorySpec", "k8s.io/api/core/v1.VolumeSource"},
 	}
 }
 
@@ -1811,14 +1811,14 @@ func schema_pkg_apis_coherence_v1_LoggingSpec(ref common.ReferenceCallback) comm
 					"fluentd": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configures whether Fluentd is enabled and the configuration of the Fluentd side-car container",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.FluentdSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.FluentdSpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.FluentdSpec"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.FluentdSpec"},
 	}
 }
 
@@ -1853,14 +1853,14 @@ func schema_pkg_apis_coherence_v1_NamedPortSpec(ref common.ReferenceCallback) co
 					"service": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Service specifies the service used to expose the port.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"},
 	}
 }
 
@@ -1874,7 +1874,7 @@ func schema_pkg_apis_coherence_v1_NetworkSpec(ref common.ReferenceCallback) comm
 					"dnsConfig": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Specifies the DNS parameters of a pod. Parameters specified here will be merged to the generated DNS configuration based on DNSPolicy.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PodDNSConfig"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PodDNSConfig"),
 						},
 					},
 					"dnsPolicy": {
@@ -1921,7 +1921,7 @@ func schema_pkg_apis_coherence_v1_NetworkSpec(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.PodDNSConfig", "k8s.io/api/core/v1.HostAlias"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.PodDNSConfig", "k8s.io/api/core/v1.HostAlias"},
 	}
 }
 
@@ -2054,14 +2054,14 @@ func schema_pkg_apis_coherence_v1_PortSpec(ref common.ReferenceCallback) common.
 					"service": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Service specifies the service used to expose the port.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.ServiceSpec"},
 	}
 }
 
@@ -2089,14 +2089,14 @@ func schema_pkg_apis_coherence_v1_PortSpecWithSSL(ref common.ReferenceCallback) 
 					"ssl": {
 						SchemaProps: spec.SchemaProps{
 							Description: "SSL configures SSL settings for a Coherence component",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.SSLSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.SSLSpec"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1.SSLSpec"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1.SSLSpec"},
 	}
 }
 

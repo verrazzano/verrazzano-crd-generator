@@ -4,7 +4,7 @@
 package apis
 
 import (
-	"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
+	"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
 )
 
 func init() {

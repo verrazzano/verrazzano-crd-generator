@@ -8,10 +8,10 @@ package v1beta1
 import (
 	time "time"
 
-	verrazzanov1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
-	versioned "github.com/oracle/verrazzano-crd-generator/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/client/informers/externalversions/internalinterfaces"
-	v1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/client/listers/verrazzano/v1beta1"
+	verrazzanov1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
+	versioned "github.com/verrazzano/verrazzano-crd-generator/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/client/informers/externalversions/internalinterfaces"
+	v1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/client/listers/verrazzano/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

@@ -8,10 +8,10 @@ package v1
 import (
 	time "time"
 
-	coherencev1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1"
-	versioned "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned"
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/informers/externalversions/internalinterfaces"
-	v1 "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/listers/coherence/v1"
+	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
+	versioned "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/informers/externalversions/internalinterfaces"
+	v1 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/listers/coherence/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

@@ -6,7 +6,7 @@
 package versioned
 
 import (
-	networkingv1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3"
+	networkingv1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

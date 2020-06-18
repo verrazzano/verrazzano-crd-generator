@@ -8,8 +8,8 @@ package v6
 import (
 	"time"
 
-	v6 "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6"
-	scheme "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/scheme"
+	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	scheme "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

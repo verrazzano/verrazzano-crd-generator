@@ -4,7 +4,7 @@
 package v1beta1
 
 import (
-	v2 "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	v2 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

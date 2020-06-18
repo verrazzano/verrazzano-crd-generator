@@ -6,8 +6,8 @@
 package verrazzano
 
 import (
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/client/informers/externalversions/internalinterfaces"
-	v1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/client/informers/externalversions/verrazzano/v1beta1"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/client/informers/externalversions/internalinterfaces"
+	v1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/client/informers/externalversions/verrazzano/v1beta1"
 )
 
 // Interface provides access to each of this group's versions.

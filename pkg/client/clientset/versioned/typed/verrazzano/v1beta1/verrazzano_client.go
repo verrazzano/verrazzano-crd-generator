@@ -6,8 +6,8 @@
 package v1beta1
 
 import (
-	v1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
-	"github.com/oracle/verrazzano-crd-generator/pkg/client/clientset/versioned/scheme"
+	v1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
+	"github.com/verrazzano/verrazzano-crd-generator/pkg/client/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

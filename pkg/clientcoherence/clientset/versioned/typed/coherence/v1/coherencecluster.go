@@ -8,8 +8,8 @@ package v1
 import (
 	"time"
 
-	v1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/coherence/v1"
-	scheme "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/scheme"
+	v1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
+	scheme "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

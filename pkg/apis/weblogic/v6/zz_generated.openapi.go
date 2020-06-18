@@ -14,23 +14,23 @@ import (
 
 func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition {
 	return map[string]common.OpenAPIDefinition{
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminServer":     schema_pkg_apis_weblogic_v6_AdminServer(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminService":    schema_pkg_apis_weblogic_v6_AdminService(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Channel":         schema_pkg_apis_weblogic_v6_Channel(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Cluster":         schema_pkg_apis_weblogic_v6_Cluster(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Domain":          schema_pkg_apis_weblogic_v6_Domain(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainCondition": schema_pkg_apis_weblogic_v6_DomainCondition(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec":      schema_pkg_apis_weblogic_v6_DomainSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainStatus":    schema_pkg_apis_weblogic_v6_DomainStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Experimental":    schema_pkg_apis_weblogic_v6_Experimental(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Istio":           schema_pkg_apis_weblogic_v6_Istio(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning":     schema_pkg_apis_weblogic_v6_ProbeTuning(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerHealth":    schema_pkg_apis_weblogic_v6_ServerHealth(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod":       schema_pkg_apis_weblogic_v6_ServerPod(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService":   schema_pkg_apis_weblogic_v6_ServerService(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerStatus":    schema_pkg_apis_weblogic_v6_ServerStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.SubsystemHealth": schema_pkg_apis_weblogic_v6_SubsystemHealth(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret":  schema_pkg_apis_weblogic_v6_WebLogicSecret(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminServer":     schema_pkg_apis_weblogic_v6_AdminServer(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminService":    schema_pkg_apis_weblogic_v6_AdminService(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Channel":         schema_pkg_apis_weblogic_v6_Channel(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Cluster":         schema_pkg_apis_weblogic_v6_Cluster(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Domain":          schema_pkg_apis_weblogic_v6_Domain(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainCondition": schema_pkg_apis_weblogic_v6_DomainCondition(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec":      schema_pkg_apis_weblogic_v6_DomainSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainStatus":    schema_pkg_apis_weblogic_v6_DomainStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Experimental":    schema_pkg_apis_weblogic_v6_Experimental(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Istio":           schema_pkg_apis_weblogic_v6_Istio(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning":     schema_pkg_apis_weblogic_v6_ProbeTuning(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerHealth":    schema_pkg_apis_weblogic_v6_ServerHealth(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod":       schema_pkg_apis_weblogic_v6_ServerPod(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService":   schema_pkg_apis_weblogic_v6_ServerService(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerStatus":    schema_pkg_apis_weblogic_v6_ServerStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.SubsystemHealth": schema_pkg_apis_weblogic_v6_SubsystemHealth(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret":  schema_pkg_apis_weblogic_v6_WebLogicSecret(ref),
 	}
 }
 
@@ -44,13 +44,13 @@ func schema_pkg_apis_weblogic_v6_AdminServer(ref common.ReferenceCallback) commo
 					"serverPod": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Server Pod",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod"),
 						},
 					},
 					"serverService": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Customization affecting ClusterIP Kubernetes services for WebLogic Server instances.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"),
 						},
 					},
 					"serverStartState": {
@@ -77,7 +77,7 @@ func schema_pkg_apis_weblogic_v6_AdminServer(ref common.ReferenceCallback) commo
 					"adminService": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configures which of the admin server's WebLogic admin channels should be exposed outside the Kubernetes cluster via a node port service.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminService"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminService"),
 						},
 					},
 				},
@@ -85,7 +85,7 @@ func schema_pkg_apis_weblogic_v6_AdminServer(ref common.ReferenceCallback) commo
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminService", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminService", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"},
 	}
 }
 
@@ -107,7 +107,7 @@ func schema_pkg_apis_weblogic_v6_AdminService(ref common.ReferenceCallback) comm
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Channel"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Channel"),
 									},
 								},
 							},
@@ -117,7 +117,7 @@ func schema_pkg_apis_weblogic_v6_AdminService(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Channel"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Channel"},
 	}
 }
 
@@ -157,13 +157,13 @@ func schema_pkg_apis_weblogic_v6_Cluster(ref common.ReferenceCallback) common.Op
 					"serverPod": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Server Pod",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod"),
 						},
 					},
 					"serverService": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Customization affecting ClusterIP Kubernetes services for WebLogic Server instances.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"),
 						},
 					},
 					"serverStartState": {
@@ -211,7 +211,7 @@ func schema_pkg_apis_weblogic_v6_Cluster(ref common.ReferenceCallback) common.Op
 					"clusterService": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Customization affecting ClusterIP Kubernetes services for the WebLogic cluster.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.KubernetesResource"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.KubernetesResource"),
 						},
 					},
 				},
@@ -219,7 +219,7 @@ func schema_pkg_apis_weblogic_v6_Cluster(ref common.ReferenceCallback) common.Op
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.KubernetesResource", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.KubernetesResource", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"},
 	}
 }
 
@@ -251,19 +251,19 @@ func schema_pkg_apis_weblogic_v6_Domain(ref common.ReferenceCallback) common.Ope
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainStatus"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -333,13 +333,13 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 					"serverPod": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Server Pod",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod"),
 						},
 					},
 					"serverService": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Customization affecting ClusterIP Kubernetes services for WebLogic Server instances.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService"),
 						},
 					},
 					"serverStartState": {
@@ -380,7 +380,7 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 					"webLogicCredentialsSecret": {
 						SchemaProps: spec.SchemaProps{
 							Description: "The name of a pre-created Kubernetes secret, in the domain's namepace, that holds the username and password needed to boot WebLogic Server",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret"),
 						},
 					},
 					"logHome": {
@@ -430,7 +430,7 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret"),
 									},
 								},
 							},
@@ -479,7 +479,7 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 					"adminServer": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configuration for the admin server Note: this value is required by WebLogic Operator, but is marked optional because Verrazzano can provide a default value.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminServer"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminServer"),
 						},
 					},
 					"managedServers": {
@@ -494,7 +494,7 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ManagedServer"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ManagedServer"),
 									},
 								},
 							},
@@ -512,7 +512,7 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Cluster"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Cluster"),
 									},
 								},
 							},
@@ -521,7 +521,7 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 					"experimental": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Experimental feature configurations",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Experimental"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Experimental"),
 						},
 					},
 				},
@@ -529,7 +529,7 @@ func schema_pkg_apis_weblogic_v6_DomainSpec(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminServer", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Cluster", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Experimental", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ManagedServer", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.AdminServer", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Cluster", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Experimental", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ManagedServer", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerPod", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerService", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.WebLogicSecret"},
 	}
 }
 
@@ -552,7 +552,7 @@ func schema_pkg_apis_weblogic_v6_DomainStatus(ref common.ReferenceCallback) comm
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainCondition"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainCondition"),
 									},
 								},
 							},
@@ -584,7 +584,7 @@ func schema_pkg_apis_weblogic_v6_DomainStatus(ref common.ReferenceCallback) comm
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerStatus"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerStatus"),
 									},
 								},
 							},
@@ -608,7 +608,7 @@ func schema_pkg_apis_weblogic_v6_DomainStatus(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainCondition", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerStatus"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainCondition", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerStatus"},
 	}
 }
 
@@ -622,14 +622,14 @@ func schema_pkg_apis_weblogic_v6_Experimental(ref common.ReferenceCallback) comm
 					"istio": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Istio service mesh integration configuration",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Istio"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Istio"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Istio"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Istio"},
 	}
 }
 
@@ -726,7 +726,7 @@ func schema_pkg_apis_weblogic_v6_ServerHealth(ref common.ReferenceCallback) comm
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.SubsystemHealth"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.SubsystemHealth"),
 									},
 								},
 							},
@@ -736,7 +736,7 @@ func schema_pkg_apis_weblogic_v6_ServerHealth(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.SubsystemHealth"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.SubsystemHealth"},
 	}
 }
 
@@ -767,13 +767,13 @@ func schema_pkg_apis_weblogic_v6_ServerPod(ref common.ReferenceCallback) common.
 					"livenessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Settings for the liveness probe associated with a server.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning"),
 						},
 					},
 					"readinessProbe": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Settings for the readiness probe associated with a server.",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning"),
 						},
 					},
 					"nodeSelector": {
@@ -925,7 +925,7 @@ func schema_pkg_apis_weblogic_v6_ServerPod(ref common.ReferenceCallback) common.
 					},
 					"shutdown": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Shutdown"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Shutdown"),
 						},
 					},
 					"volumes": {
@@ -968,7 +968,7 @@ func schema_pkg_apis_weblogic_v6_ServerPod(ref common.ReferenceCallback) common.
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.Shutdown", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ProbeTuning", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.Shutdown", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.Volume", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -1060,7 +1060,7 @@ func schema_pkg_apis_weblogic_v6_ServerStatus(ref common.ReferenceCallback) comm
 					"health": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Current status and health of a specific WebLogic server",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerHealth"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerHealth"),
 						},
 					},
 				},
@@ -1068,7 +1068,7 @@ func schema_pkg_apis_weblogic_v6_ServerStatus(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerHealth"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.ServerHealth"},
 	}
 }
 

@@ -6,7 +6,7 @@
 package versioned
 
 import (
-	coherencev1 "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1"
+	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

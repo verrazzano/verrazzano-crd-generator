@@ -6,8 +6,8 @@
 package v6
 
 import (
-	v6 "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6"
-	"github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/scheme"
+	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	"github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

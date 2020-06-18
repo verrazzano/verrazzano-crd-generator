@@ -6,8 +6,8 @@
 package weblogic
 
 import (
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
-	v6 "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/weblogic/v6"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
+	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/weblogic/v6"
 )
 
 // Interface provides access to each of this group's versions.

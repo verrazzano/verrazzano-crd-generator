@@ -6,7 +6,7 @@
 package versioned
 
 import (
-	weblogicv6 "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6"
+	weblogicv6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

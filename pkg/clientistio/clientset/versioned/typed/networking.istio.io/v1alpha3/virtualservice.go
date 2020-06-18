@@ -8,8 +8,8 @@ package v1alpha3
 import (
 	"time"
 
-	v1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3"
-	scheme "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/scheme"
+	v1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3"
+	scheme "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/scheme"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

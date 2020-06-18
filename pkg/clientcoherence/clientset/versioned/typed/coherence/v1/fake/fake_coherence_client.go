@@ -6,7 +6,7 @@
 package fake
 
 import (
-	v1 "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1"
+	v1 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

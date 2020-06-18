@@ -6,7 +6,7 @@
 package fake
 
 import (
-	v6 "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6"
+	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

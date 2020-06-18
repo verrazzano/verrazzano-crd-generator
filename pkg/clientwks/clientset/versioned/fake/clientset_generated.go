@@ -6,9 +6,9 @@
 package fake
 
 import (
-	clientset "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned"
-	weblogicv6 "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6"
-	fakeweblogicv6 "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6/fake"
+	clientset "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned"
+	weblogicv6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6"
+	fakeweblogicv6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

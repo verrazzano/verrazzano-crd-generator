@@ -8,7 +8,7 @@ package externalversions
 import (
 	"fmt"
 
-	v6 "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )

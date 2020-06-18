@@ -6,9 +6,9 @@
 package fake
 
 import (
-	clientset "github.com/oracle/verrazzano-crd-generator/pkg/client/clientset/versioned"
-	verrazzanov1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/client/clientset/versioned/typed/verrazzano/v1beta1"
-	fakeverrazzanov1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/client/clientset/versioned/typed/verrazzano/v1beta1/fake"
+	clientset "github.com/verrazzano/verrazzano-crd-generator/pkg/client/clientset/versioned"
+	verrazzanov1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/client/clientset/versioned/typed/verrazzano/v1beta1"
+	fakeverrazzanov1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/client/clientset/versioned/typed/verrazzano/v1beta1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

@@ -6,7 +6,7 @@
 package versioned
 
 import (
-	verrazzanov1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/client/clientset/versioned/typed/verrazzano/v1beta1"
+	verrazzanov1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/client/clientset/versioned/typed/verrazzano/v1beta1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

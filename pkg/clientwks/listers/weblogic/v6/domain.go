@@ -6,7 +6,7 @@
 package v6
 
 import (
-	v6 "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/client-go/tools/cache"

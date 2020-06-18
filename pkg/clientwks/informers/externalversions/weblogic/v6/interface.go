@@ -6,7 +6,7 @@
 package v6
 
 import (
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

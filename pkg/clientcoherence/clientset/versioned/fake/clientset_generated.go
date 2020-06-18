@@ -6,9 +6,9 @@
 package fake
 
 import (
-	clientset "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned"
-	coherencev1 "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1"
-	fakecoherencev1 "github.com/oracle/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1/fake"
+	clientset "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned"
+	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1"
+	fakecoherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence/clientset/versioned/typed/coherence/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

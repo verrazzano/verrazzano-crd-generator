@@ -6,8 +6,8 @@
 package v1alpha3
 
 import (
-	v1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3"
-	"github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/scheme"
+	v1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3"
+	"github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

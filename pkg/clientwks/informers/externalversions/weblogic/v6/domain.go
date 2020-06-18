@@ -8,10 +8,10 @@ package v6
 import (
 	time "time"
 
-	weblogicv6 "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6"
-	versioned "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned"
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
-	v6 "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/listers/weblogic/v6"
+	weblogicv6 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	versioned "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
+	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/listers/weblogic/v6"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

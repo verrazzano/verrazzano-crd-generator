@@ -10,9 +10,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/clientset/versioned"
-	internalinterfaces "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
-	weblogic "github.com/oracle/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/weblogic"
+	versioned "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned"
+	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
+	weblogic "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/weblogic"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

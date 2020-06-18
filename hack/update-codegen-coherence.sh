@@ -22,7 +22,7 @@ rm -rf $GENERATED_CLIENT_DIR
 #                  k8s.io/kubernetes. The output-base is needed for the generators to output into the vendor dir
 #                  instead of the $GOPATH directly. For normal projects this can be dropped.
 ${CODEGEN_PKG}/generate-groups.sh "deepcopy,client,informer,lister" \
-  github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence github.com/oracle/verrazzano-crd-generator/pkg/apis \
+  github.com/verrazzano/verrazzano-crd-generator/pkg/clientcoherence github.com/verrazzano/verrazzano-crd-generator/pkg/apis \
   coherence:v1 \
   --output-base "${GOPATH}/src" \
   --go-header-file ${SCRIPT_ROOT}/hack/custom-header.txt

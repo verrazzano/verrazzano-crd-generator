@@ -6,7 +6,7 @@
 package fake
 
 import (
-	v1alpha3 "github.com/oracle/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3"
+	v1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientistio/clientset/versioned/typed/networking.istio.io/v1alpha3"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

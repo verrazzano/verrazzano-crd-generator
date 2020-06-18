@@ -6,7 +6,7 @@
 package scheme
 
 import (
-	verrazzanov1beta1 "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
+	verrazzanov1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

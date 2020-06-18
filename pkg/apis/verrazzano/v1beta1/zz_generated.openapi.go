@@ -14,34 +14,34 @@ import (
 
 func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition {
 	return map[string]common.OpenAPIDefinition{
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.BindingComponent":               schema_pkg_apis_verrazzano_v1beta1_BindingComponent(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.KubernetesNamespace":            schema_pkg_apis_verrazzano_v1beta1_KubernetesNamespace(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.MatchRequest":                   schema_pkg_apis_verrazzano_v1beta1_MatchRequest(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBinding":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBinding(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingSpec":          schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingStatus":        schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceBinding":     schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceBinding(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceCluster":     schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceCluster(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceConnection":  schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceConnection(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections":          schema_pkg_apis_verrazzano_v1beta1_VerrazzanoConnections(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseBinding":      schema_pkg_apis_verrazzano_v1beta1_VerrazzanoDatabaseBinding(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseConnection":   schema_pkg_apis_verrazzano_v1beta1_VerrazzanoDatabaseConnection(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidon":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoHelidon(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidonBinding":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoHelidonBinding(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressBinding":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoIngressBinding(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressConnection":    schema_pkg_apis_verrazzano_v1beta1_VerrazzanoIngressConnection(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoLogging(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedCluster":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoManagedCluster(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterSpec":   schema_pkg_apis_verrazzano_v1beta1_VerrazzanoManagedClusterSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterStatus": schema_pkg_apis_verrazzano_v1beta1_VerrazzanoManagedClusterStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoMetrics(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModel":                schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModel(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelSpec":            schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelSpec(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelStatus":          schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelStatus(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoPlacement":            schema_pkg_apis_verrazzano_v1beta1_VerrazzanoPlacement(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoRestConnection":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoRestConnection(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWebLogicDomain":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref),
-		"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWeblogicBinding":      schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWeblogicBinding(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.BindingComponent":               schema_pkg_apis_verrazzano_v1beta1_BindingComponent(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.KubernetesNamespace":            schema_pkg_apis_verrazzano_v1beta1_KubernetesNamespace(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.MatchRequest":                   schema_pkg_apis_verrazzano_v1beta1_MatchRequest(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBinding":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBinding(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingSpec":          schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingStatus":        schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceBinding":     schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceBinding(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceCluster":     schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceCluster(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceConnection":  schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceConnection(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections":          schema_pkg_apis_verrazzano_v1beta1_VerrazzanoConnections(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseBinding":      schema_pkg_apis_verrazzano_v1beta1_VerrazzanoDatabaseBinding(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseConnection":   schema_pkg_apis_verrazzano_v1beta1_VerrazzanoDatabaseConnection(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidon":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoHelidon(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidonBinding":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoHelidonBinding(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressBinding":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoIngressBinding(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressConnection":    schema_pkg_apis_verrazzano_v1beta1_VerrazzanoIngressConnection(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoLogging(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedCluster":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoManagedCluster(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterSpec":   schema_pkg_apis_verrazzano_v1beta1_VerrazzanoManagedClusterSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterStatus": schema_pkg_apis_verrazzano_v1beta1_VerrazzanoManagedClusterStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics":              schema_pkg_apis_verrazzano_v1beta1_VerrazzanoMetrics(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModel":                schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModel(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelSpec":            schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelSpec(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelStatus":          schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelStatus(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoPlacement":            schema_pkg_apis_verrazzano_v1beta1_VerrazzanoPlacement(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoRestConnection":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoRestConnection(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWebLogicDomain":       schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref),
+		"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWeblogicBinding":      schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWeblogicBinding(ref),
 	}
 }
 
@@ -92,7 +92,7 @@ func schema_pkg_apis_verrazzano_v1beta1_KubernetesNamespace(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.BindingComponent"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.BindingComponent"),
 									},
 								},
 							},
@@ -103,7 +103,7 @@ func schema_pkg_apis_verrazzano_v1beta1_KubernetesNamespace(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.BindingComponent"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.BindingComponent"},
 	}
 }
 
@@ -162,12 +162,12 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBinding(ref common.ReferenceCa
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingSpec"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingStatus"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingStatus"),
 						},
 					},
 				},
@@ -175,7 +175,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBinding(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoBindingStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -212,7 +212,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWeblogicBinding"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWeblogicBinding"),
 									},
 								},
 							},
@@ -230,7 +230,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceBinding"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceBinding"),
 									},
 								},
 							},
@@ -248,7 +248,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidonBinding"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidonBinding"),
 									},
 								},
 							},
@@ -266,7 +266,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseBinding"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseBinding"),
 									},
 								},
 							},
@@ -284,7 +284,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressBinding"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressBinding"),
 									},
 								},
 							},
@@ -302,7 +302,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoPlacement"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoPlacement"),
 									},
 								},
 							},
@@ -313,7 +313,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoBindingSpec(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceBinding", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseBinding", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidonBinding", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressBinding", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoPlacement", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWeblogicBinding"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceBinding", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseBinding", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidonBinding", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressBinding", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoPlacement", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWeblogicBinding"},
 	}
 }
 
@@ -421,7 +421,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceCluster(ref common.Re
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections"),
 									},
 								},
 							},
@@ -430,13 +430,13 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceCluster(ref common.Re
 					"metrics": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Metrics configuration",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics"),
 						},
 					},
 					"logging": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Logging configuration",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging"),
 						},
 					},
 				},
@@ -444,7 +444,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoCoherenceCluster(ref common.Re
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "k8s.io/api/core/v1.LocalObjectReference"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "k8s.io/api/core/v1.LocalObjectReference"},
 	}
 }
 
@@ -495,7 +495,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoConnections(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoRestConnection"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoRestConnection"),
 									},
 								},
 							},
@@ -513,7 +513,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoConnections(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressConnection"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressConnection"),
 									},
 								},
 							},
@@ -531,7 +531,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoConnections(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseConnection"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseConnection"),
 									},
 								},
 							},
@@ -549,7 +549,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoConnections(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceConnection"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceConnection"),
 									},
 								},
 							},
@@ -559,7 +559,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoConnections(ref common.Referen
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceConnection", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseConnection", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressConnection", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoRestConnection"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceConnection", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoDatabaseConnection", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoIngressConnection", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoRestConnection"},
 	}
 }
 
@@ -698,7 +698,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoHelidon(ref common.ReferenceCa
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections"),
 									},
 								},
 							},
@@ -707,13 +707,13 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoHelidon(ref common.ReferenceCa
 					"metrics": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Metrics configuration",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics"),
 						},
 					},
 					"logging": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Logging configuration",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging"),
 						},
 					},
 				},
@@ -721,7 +721,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoHelidon(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "k8s.io/api/core/v1.LocalObjectReference"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "k8s.io/api/core/v1.LocalObjectReference"},
 	}
 }
 
@@ -802,7 +802,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoIngressConnection(ref common.R
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.MatchRequest"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.MatchRequest"),
 									},
 								},
 							},
@@ -813,7 +813,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoIngressConnection(ref common.R
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.MatchRequest"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.MatchRequest"},
 	}
 }
 
@@ -873,19 +873,19 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoManagedCluster(ref common.Refe
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterSpec"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterStatus"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoManagedClusterStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1005,12 +1005,12 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModel(ref common.ReferenceCall
 					},
 					"spec": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelSpec"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelStatus"),
+							Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelStatus"),
 						},
 					},
 				},
@@ -1018,7 +1018,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModel(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelSpec", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelSpec", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoModelStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -1048,7 +1048,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelSpec(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWebLogicDomain"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWebLogicDomain"),
 									},
 								},
 							},
@@ -1066,7 +1066,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelSpec(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceCluster"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceCluster"),
 									},
 								},
 							},
@@ -1084,7 +1084,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelSpec(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidon"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidon"),
 									},
 								},
 							},
@@ -1095,7 +1095,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoModelSpec(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceCluster", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidon", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWebLogicDomain"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoCoherenceCluster", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoHelidon", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoWebLogicDomain"},
 	}
 }
 
@@ -1136,7 +1136,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoPlacement(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.KubernetesNamespace"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.KubernetesNamespace"),
 									},
 								},
 							},
@@ -1147,7 +1147,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoPlacement(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.KubernetesNamespace"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.KubernetesNamespace"},
 	}
 }
 
@@ -1224,7 +1224,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref common.Refe
 					"domainCRValues": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Domain CR values, can provide any valid Domain CR value",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec"),
 						},
 					},
 					"connections": {
@@ -1239,7 +1239,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref common.Refe
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Ref: ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections"),
+										Ref: ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections"),
 									},
 								},
 							},
@@ -1248,13 +1248,13 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref common.Refe
 					"metrics": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Metrics configuration",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics"),
 						},
 					},
 					"logging": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Logging configuration",
-							Ref:         ref("github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging"),
 						},
 					},
 				},
@@ -1262,7 +1262,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/oracle/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "github.com/oracle/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6.DomainSpec"},
 	}
 }
 
