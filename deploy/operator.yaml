@@ -1,0 +1,35 @@
+# Copyright (c) 2020, Oracle Corporation and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verrazzano-crd-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: verrazzano-crd-generator
+  template:
+    metadata:
+      labels:
+        name: verrazzano-crd-generator
+    spec:
+      serviceAccountName: verrazzano-crd-generator
+      containers:
+        - name: verrazzano-crd-generator
+          # Replace this with the built image name
+          image: REPLACE_IMAGE
+          command:
+          - verrazzano-crd-generator
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "verrazzano-crd-generator"

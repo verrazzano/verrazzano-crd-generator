@@ -1,0 +1,72 @@
+# Copyright (C) 2020, Oracle Corporation and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
+apiVersion: verrazzano.io/v1beta1
+kind: VerrazzanoModel
+metadata:
+  name: sock-shop-model
+  namespace: default
+spec:
+  description: "Sock Shop Model"
+  scope: Namespaced
+  group: verrazzano.io
+  helidonApplications:
+    - name: "frontend"
+      image: "helidonsockshop/front-end:0.3.12"
+      port: 8088
+      targetPort: 8079
+      connections:
+        - ingress:
+            - name: "sockshop-frontend-ingress"
+              port: 80
+              match:
+                - uri:
+                    prefix: /
+                - uri:
+                    exact: /cart
+                - uri:
+                    prefix: /cart
+                - uri:
+                    exact: /catalogue
+    - name: "carts"
+      image: "helidonsockshop/carts-core:latest"
+      port: 80
+      targetPort: 7001
+    - name: "catalog"
+      image: "helidonsockshop/catalog-core:latest"
+      port: 80
+      targetPort: 7001
+    - name: "orders"
+      image: "helidonsockshop/orders-core:latest"
+      port: 80
+      targetPort: 7001
+    - name: "payment"
+      image: "helidonsockshop/payment-core:latest"
+      port: 80
+      targetPort: 7001
+    - name: "shipping"
+      image: "helidonsockshop/shipping-core:latest"
+      port: 80
+      targetPort: 7001
+    - name: "users"
+      image: "helidonsockshop/users-core:latest"
+      port: 80
+      targetPort: 7001
+    - name: "swagger"
+      image: "swaggerapi/swagger-ui:latest"
+      port: 80
+      targetPort: 7001
+  weblogicDomains:
+    - name: wl-frontend
+      adminPort: 32701
+      t3Port: 32702
+      domainCRValues:
+        domainUID: wl-frontend
+      connections:
+        - ingress:
+            - name: wl-ingress
+              port: 80
+        - rest:
+            - target: "catalog"
+
+
