@@ -7,8 +7,8 @@ package fake
 
 import (
 	clientset "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned"
-	weblogicv6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6"
-	fakeweblogicv6 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v6/fake"
+	weblogicv7 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v7"
+	fakeweblogicv7 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v7/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -63,7 +63,7 @@ func (c *Clientset) Tracker() testing.ObjectTracker {
 
 var _ clientset.Interface = &Clientset{}
 
-// WeblogicV6 retrieves the WeblogicV6Client
-func (c *Clientset) WeblogicV6() weblogicv6.WeblogicV6Interface {
-	return &fakeweblogicv6.FakeWeblogicV6{Fake: &c.Fake}
+// WeblogicV7 retrieves the WeblogicV7Client
+func (c *Clientset) WeblogicV7() weblogicv7.WeblogicV7Interface {
+	return &fakeweblogicv7.FakeWeblogicV7{Fake: &c.Fake}
 }

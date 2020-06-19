@@ -9,7 +9,7 @@ set -o pipefail
 SCRIPT_ROOT=$(dirname $0)/..
 CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${SCRIPT_ROOT}; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../code-generator)}
 
-GENERATED_ZZ_FILE=$SCRIPT_ROOT/pkg/apis/weblogic/v6/zz_generated.deepcopy.go
+GENERATED_ZZ_FILE=$SCRIPT_ROOT/pkg/apis/weblogic/v7/zz_generated.deepcopy.go
 echo Remove $GENERATED_ZZ_FILE file if exist
 rm -f $GENERATED_ZZ_FILE
 
@@ -23,6 +23,6 @@ rm -rf $GENERATED_CLIENT_DIR
 #                  instead of the $GOPATH directly. For normal projects this can be dropped.
 ${CODEGEN_PKG}/generate-groups.sh "deepcopy,client,informer,lister" \
   github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks github.com/verrazzano/verrazzano-crd-generator/pkg/apis \
-  weblogic:v6 \
+  weblogic:v7 \
   --output-base "${GOPATH}/src" \
   --go-header-file ${SCRIPT_ROOT}/hack/custom-header.txt

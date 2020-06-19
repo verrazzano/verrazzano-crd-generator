@@ -10273,7 +10273,7 @@ spec:
                         description: The name of the WebLogic domain
                         type: string
                       experimental:
-                        description: Experimental feature configurations
+                        description: Configurations
                         properties:
                           istio:
                             description: Istio service mesh integration configuration
