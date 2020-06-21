@@ -538,7 +538,7 @@ func schema_pkg_apis_weblogic_v7_DomainSpec(ref common.ReferenceCallback) common
 							},
 						},
 					},
-					"experimental": {
+					"configuration": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configurations",
 							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v7.Configuration"),

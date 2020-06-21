@@ -10260,19 +10260,7 @@ spec:
                         description: The name of the config map for optional WebLogic
                           configuration overrides
                         type: string
-                      domainHome:
-                        description: The folder for the WebLogic Domain
-                        type: string
-                      domainHomeInImage:
-                        description: 'True if this domain''s home is defined in the
-                          docker image for the domain Note: this value is required
-                          by WebLogic Operator, but is marked optional because Verrazzano
-                          can provide a default value.'
-                        type: boolean
-                      domainUID:
-                        description: The name of the WebLogic domain
-                        type: string
-                      experimental:
+                      configuration:
                         description: Configurations
                         properties:
                           istio:
@@ -10288,6 +10276,18 @@ spec:
                                 type: integer
                             type: object
                         type: object
+                      domainHome:
+                        description: The folder for the WebLogic Domain
+                        type: string
+                      domainHomeInImage:
+                        description: 'True if this domain''s home is defined in the
+                          docker image for the domain Note: this value is required
+                          by WebLogic Operator, but is marked optional because Verrazzano
+                          can provide a default value.'
+                        type: boolean
+                      domainUID:
+                        description: The name of the WebLogic domain
+                        type: string
                       image:
                         description: The WebLogic Docker image; required when domainHomeInImage
                           is true

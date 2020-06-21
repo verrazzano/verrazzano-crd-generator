@@ -69,5 +69,5 @@ type DomainSpec struct {
 	Clusters []Cluster `json:"clusters"`
 
 	// Configurations
-	Configuration Configuration `json:"experimental,omitempty"`
+	Configuration Configuration `json:"configuration,omitempty"`
 }
