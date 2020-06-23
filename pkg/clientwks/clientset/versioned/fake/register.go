@@ -6,7 +6,7 @@
 package fake
 
 import (
-	weblogicv6 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	weblogicv7 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v7"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
@@ -18,7 +18,7 @@ var scheme = runtime.NewScheme()
 var codecs = serializer.NewCodecFactory(scheme)
 var parameterCodec = runtime.NewParameterCodec(scheme)
 var localSchemeBuilder = runtime.SchemeBuilder{
-	weblogicv6.AddToScheme,
+	weblogicv7.AddToScheme,
 }
 
 // AddToScheme adds all types of this clientset into the given scheme. This allows composition

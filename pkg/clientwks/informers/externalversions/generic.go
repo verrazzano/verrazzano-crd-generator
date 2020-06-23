@@ -8,7 +8,7 @@ package externalversions
 import (
 	"fmt"
 
-	v6 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v6"
+	v7 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v7"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )
@@ -39,9 +39,9 @@ func (f *genericInformer) Lister() cache.GenericLister {
 // TODO extend this to unknown resources with a client pool
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
-	// Group=weblogic.oracle, Version=v6
-	case v6.SchemeGroupVersion.WithResource("domains"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Weblogic().V6().Domains().Informer()}, nil
+	// Group=weblogic.oracle, Version=v7
+	case v7.SchemeGroupVersion.WithResource("domains"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Weblogic().V7().Domains().Informer()}, nil
 
 	}
 
