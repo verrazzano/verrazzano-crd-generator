@@ -6,7 +6,7 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.5.1
 	gopkg.in/yaml.v2 v2.2.8
-	istio.io/api v0.0.0-00010101000000-000000000000
+	istio.io/api v0.0.0-20200107183329-ed4b507c54e1
 	k8s.io/api v0.18.2
 	k8s.io/apimachinery v0.18.2
 	k8s.io/client-go v12.0.0+incompatible
@@ -18,6 +18,7 @@ require (
 
 replace (
 	github.com/Azure/go-autorest => github.com/Azure/go-autorest v13.3.2+incompatible // Required by OLM
+	gopkg.in/yaml.v2 => gopkg.in/yaml.v2 v2.2.2
 	k8s.io/client-go => k8s.io/client-go v0.18.2
 	k8s.io/code-generator => k8s.io/code-generator v0.18.2
 )
