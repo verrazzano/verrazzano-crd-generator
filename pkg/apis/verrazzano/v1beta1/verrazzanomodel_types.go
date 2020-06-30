@@ -90,19 +90,19 @@ type VerrazzanoMetrics struct {
 // VerrazzanoConnections defines the connection for a component
 type VerrazzanoConnections struct {
 	// REST Connections
-	// +listType
+	// +listType=set
 	Rest []VerrazzanoRestConnection `json:"rest,omitempty" yaml:"rest,omitempty"`
 
 	// Ingress Connections
-	// +listType
+	// +listType=set
 	Ingress []VerrazzanoIngressConnection `json:"ingress,omitempty" yamml:"ingress,omitempty"`
 
 	// Database Connections
-	// +listType
+	// +listType=set
 	Database []VerrazzanoDatabaseConnection `json:"database,omitempty" yaml:"database,omitempty"`
 
 	// Coherence Connections
-	// +listType
+	// +listType=set
 	Coherence []VerrazzanoCoherenceConnection `json:"coherence,omitempty" yaml:"coherence,omitempty"`
 }
 
@@ -122,7 +122,7 @@ type VerrazzanoHelidon struct {
 	TargetPort uint `json:"targetPort,omitempty" yaml:"targetPort,omitempty"`
 
 	// The docker secrets for pulling images
-	// +listType
+	// +x-kubernetes-list-type=set
 	ImagePullSecrets []corev1.LocalObjectReference `json:"imagePullSecrets,omitempty" yaml:"imagePullSecrets,omitempty"`
 
 	// Option to configure a Helidon application to use Fluentd for scraping the applications log.
@@ -130,7 +130,7 @@ type VerrazzanoHelidon struct {
 	FluentdEnabled *bool `json:"fluentdEnabled,omitempty" yaml:"fluentdEnabled,omitempty"`
 
 	// Connections configuration
-	// +listType
+	// +listType=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
 
 	// Metrics configuration
@@ -150,7 +150,7 @@ type VerrazzanoCoherenceCluster struct {
 	Image string `json:"image" yaml:"image"`
 
 	// The docker secrets for pulling images
-	// +listType
+	// +x-kubernetes-list-type=set
 	ImagePullSecrets []corev1.LocalObjectReference `json:"imagePullSecrets,omitempty" yaml:"imagePullSecrets,omitempty"`
 
 	// Coherence pof config
@@ -160,7 +160,7 @@ type VerrazzanoCoherenceCluster struct {
 	CacheConfig string `json:"cacheConfig" yaml:"cacheConfig"`
 
 	// Connections configuration
-	// +listType
+	// +listType=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
 
 	// Metrics configuration
@@ -189,7 +189,7 @@ type VerrazzanoWebLogicDomain struct {
 	DomainCRValues v7.DomainSpec `json:"domainCRValues" yaml:"domainCRValues"`
 
 	// Connections configuration
-	// +listType
+	// +listType=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
 
 	// Metrics configuration
@@ -206,15 +206,15 @@ type VerrazzanoModelSpec struct {
 	Description string `json:"description" yaml:"description"`
 
 	// The set of WebLogic domains
-	// +listType
+	// +listType=set
 	WeblogicDomains []VerrazzanoWebLogicDomain `json:"weblogicDomains,omitempty" yaml:"weblogicDomains,omitempty"`
 
 	// The set of coherence clusters
-	// +listType
+	// +listType=set
 	CoherenceClusters []VerrazzanoCoherenceCluster `json:"coherenceClusters,omitempty" yaml:"coherenceClusters,omitempty"`
 
 	// The set of Helidon applications
-	// +listType
+	// +listType=set
 	HelidonApplications []VerrazzanoHelidon `json:"helidonApplications,omitempty" yaml:"helidonApplications,omitempty"`
 }
 

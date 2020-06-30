@@ -16,6 +16,6 @@ type ServerHealth struct {
 	OverallHealth string `json:"overallHealth,omitempty"`
 
 	// Status of unhealthy subsystems, if any
-	// +listType
+	// +listType=set
 	Subsystems []SubsystemHealth `json:"subsystems,omitempty"`
 }

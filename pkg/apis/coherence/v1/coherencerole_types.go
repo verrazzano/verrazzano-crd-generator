@@ -63,7 +63,7 @@ type CoherenceRoleStatus struct {
 	// More info about label selectors: http://kubernetes.io/docs/user-guide/labels#label-selectors
 	Selector string `json:"selector,omitempty"`
 	// The status of the start quorums for this role.
-	// +listType
+	// +listType=set
 	StartQuorum []StartQuorumStatus `json:"startQuorum,omitempty"`
 }
 

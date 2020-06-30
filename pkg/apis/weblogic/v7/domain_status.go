@@ -7,7 +7,7 @@ package v7
 // +k8s:openapi-gen=true
 type DomainStatus struct {
 	// Current service state of domain
-	// +listType
+	// +listType=set
 	Conditions []DomainCondition `json:"conditions,omitempty"`
 
 	// A human readable message indicating details about why the domain is in this condition
@@ -17,7 +17,7 @@ type DomainStatus struct {
 	Reason string `json:"reason,omitempty"`
 
 	// Status of WebLogic servers in this domain
-	// +listType
+	// +listType=set
 	Servers []ServerStatus `json:"servers,omitempty"`
 
 	// RFC 3339 date and time at which the operator started the domain. This will be when

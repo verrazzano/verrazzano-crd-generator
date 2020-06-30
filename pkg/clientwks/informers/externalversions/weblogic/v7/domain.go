@@ -6,6 +6,7 @@
 package v7
 
 import (
+	"context"
 	time "time"
 
 	weblogicv7 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v7"
@@ -48,13 +49,13 @@ func NewFilteredDomainInformer(client versioned.Interface, namespace string, res
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.WeblogicV7().Domains(namespace).List(options)
+				return client.WeblogicV7().Domains(namespace).List(context.TODO(), options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.WeblogicV7().Domains(namespace).Watch(options)
+				return client.WeblogicV7().Domains(namespace).Watch(context.TODO(), options)
 			},
 		},
 		&weblogicv7.Domain{},

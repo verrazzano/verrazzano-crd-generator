@@ -6,6 +6,8 @@
 package fake
 
 import (
+	"context"
+
 	v1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
@@ -26,7 +28,7 @@ var verrazzanobindingsResource = schema.GroupVersionResource{Group: "verrazzano.
 var verrazzanobindingsKind = schema.GroupVersionKind{Group: "verrazzano.io", Version: "v1beta1", Kind: "VerrazzanoBinding"}
 
 // Get takes name of the verrazzanoBinding, and returns the corresponding verrazzanoBinding object, and an error if there is any.
-func (c *FakeVerrazzanoBindings) Get(name string, options v1.GetOptions) (result *v1beta1.VerrazzanoBinding, err error) {
+func (c *FakeVerrazzanoBindings) Get(ctx context.Context, name string, options v1.GetOptions) (result *v1beta1.VerrazzanoBinding, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewGetAction(verrazzanobindingsResource, c.ns, name), &v1beta1.VerrazzanoBinding{})
 
@@ -37,7 +39,7 @@ func (c *FakeVerrazzanoBindings) Get(name string, options v1.GetOptions) (result
 }
 
 // List takes label and field selectors, and returns the list of VerrazzanoBindings that match those selectors.
-func (c *FakeVerrazzanoBindings) List(opts v1.ListOptions) (result *v1beta1.VerrazzanoBindingList, err error) {
+func (c *FakeVerrazzanoBindings) List(ctx context.Context, opts v1.ListOptions) (result *v1beta1.VerrazzanoBindingList, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewListAction(verrazzanobindingsResource, verrazzanobindingsKind, c.ns, opts), &v1beta1.VerrazzanoBindingList{})
 
@@ -59,14 +61,14 @@ func (c *FakeVerrazzanoBindings) List(opts v1.ListOptions) (result *v1beta1.Verr
 }
 
 // Watch returns a watch.Interface that watches the requested verrazzanoBindings.
-func (c *FakeVerrazzanoBindings) Watch(opts v1.ListOptions) (watch.Interface, error) {
+func (c *FakeVerrazzanoBindings) Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error) {
 	return c.Fake.
 		InvokesWatch(testing.NewWatchAction(verrazzanobindingsResource, c.ns, opts))
 
 }
 
 // Create takes the representation of a verrazzanoBinding and creates it.  Returns the server's representation of the verrazzanoBinding, and an error, if there is any.
-func (c *FakeVerrazzanoBindings) Create(verrazzanoBinding *v1beta1.VerrazzanoBinding) (result *v1beta1.VerrazzanoBinding, err error) {
+func (c *FakeVerrazzanoBindings) Create(ctx context.Context, verrazzanoBinding *v1beta1.VerrazzanoBinding, opts v1.CreateOptions) (result *v1beta1.VerrazzanoBinding, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewCreateAction(verrazzanobindingsResource, c.ns, verrazzanoBinding), &v1beta1.VerrazzanoBinding{})
 
@@ -77,7 +79,7 @@ func (c *FakeVerrazzanoBindings) Create(verrazzanoBinding *v1beta1.VerrazzanoBin
 }
 
 // Update takes the representation of a verrazzanoBinding and updates it. Returns the server's representation of the verrazzanoBinding, and an error, if there is any.
-func (c *FakeVerrazzanoBindings) Update(verrazzanoBinding *v1beta1.VerrazzanoBinding) (result *v1beta1.VerrazzanoBinding, err error) {
+func (c *FakeVerrazzanoBindings) Update(ctx context.Context, verrazzanoBinding *v1beta1.VerrazzanoBinding, opts v1.UpdateOptions) (result *v1beta1.VerrazzanoBinding, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewUpdateAction(verrazzanobindingsResource, c.ns, verrazzanoBinding), &v1beta1.VerrazzanoBinding{})
 
@@ -88,7 +90,7 @@ func (c *FakeVerrazzanoBindings) Update(verrazzanoBinding *v1beta1.VerrazzanoBin
 }
 
 // Delete takes name of the verrazzanoBinding and deletes it. Returns an error if one occurs.
-func (c *FakeVerrazzanoBindings) Delete(name string, options *v1.DeleteOptions) error {
+func (c *FakeVerrazzanoBindings) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
 		Invokes(testing.NewDeleteAction(verrazzanobindingsResource, c.ns, name), &v1beta1.VerrazzanoBinding{})
 
@@ -96,15 +98,15 @@ func (c *FakeVerrazzanoBindings) Delete(name string, options *v1.DeleteOptions) 
 }
 
 // DeleteCollection deletes a collection of objects.
-func (c *FakeVerrazzanoBindings) DeleteCollection(options *v1.DeleteOptions, listOptions v1.ListOptions) error {
-	action := testing.NewDeleteCollectionAction(verrazzanobindingsResource, c.ns, listOptions)
+func (c *FakeVerrazzanoBindings) DeleteCollection(ctx context.Context, opts v1.DeleteOptions, listOpts v1.ListOptions) error {
+	action := testing.NewDeleteCollectionAction(verrazzanobindingsResource, c.ns, listOpts)
 
 	_, err := c.Fake.Invokes(action, &v1beta1.VerrazzanoBindingList{})
 	return err
 }
 
 // Patch applies the patch and returns the patched verrazzanoBinding.
-func (c *FakeVerrazzanoBindings) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *v1beta1.VerrazzanoBinding, err error) {
+func (c *FakeVerrazzanoBindings) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta1.VerrazzanoBinding, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewPatchSubresourceAction(verrazzanobindingsResource, c.ns, name, pt, data, subresources...), &v1beta1.VerrazzanoBinding{})
 

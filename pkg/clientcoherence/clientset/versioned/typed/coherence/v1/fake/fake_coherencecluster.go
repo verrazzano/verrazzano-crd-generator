@@ -6,6 +6,8 @@
 package fake
 
 import (
+	"context"
+
 	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
@@ -26,7 +28,7 @@ var coherenceclustersResource = schema.GroupVersionResource{Group: "coherence.or
 var coherenceclustersKind = schema.GroupVersionKind{Group: "coherence.oracle.com", Version: "v1", Kind: "CoherenceCluster"}
 
 // Get takes name of the coherenceCluster, and returns the corresponding coherenceCluster object, and an error if there is any.
-func (c *FakeCoherenceClusters) Get(name string, options v1.GetOptions) (result *coherencev1.CoherenceCluster, err error) {
+func (c *FakeCoherenceClusters) Get(ctx context.Context, name string, options v1.GetOptions) (result *coherencev1.CoherenceCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewGetAction(coherenceclustersResource, c.ns, name), &coherencev1.CoherenceCluster{})
 
@@ -37,7 +39,7 @@ func (c *FakeCoherenceClusters) Get(name string, options v1.GetOptions) (result 
 }
 
 // List takes label and field selectors, and returns the list of CoherenceClusters that match those selectors.
-func (c *FakeCoherenceClusters) List(opts v1.ListOptions) (result *coherencev1.CoherenceClusterList, err error) {
+func (c *FakeCoherenceClusters) List(ctx context.Context, opts v1.ListOptions) (result *coherencev1.CoherenceClusterList, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewListAction(coherenceclustersResource, coherenceclustersKind, c.ns, opts), &coherencev1.CoherenceClusterList{})
 
@@ -59,14 +61,14 @@ func (c *FakeCoherenceClusters) List(opts v1.ListOptions) (result *coherencev1.C
 }
 
 // Watch returns a watch.Interface that watches the requested coherenceClusters.
-func (c *FakeCoherenceClusters) Watch(opts v1.ListOptions) (watch.Interface, error) {
+func (c *FakeCoherenceClusters) Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error) {
 	return c.Fake.
 		InvokesWatch(testing.NewWatchAction(coherenceclustersResource, c.ns, opts))
 
 }
 
 // Create takes the representation of a coherenceCluster and creates it.  Returns the server's representation of the coherenceCluster, and an error, if there is any.
-func (c *FakeCoherenceClusters) Create(coherenceCluster *coherencev1.CoherenceCluster) (result *coherencev1.CoherenceCluster, err error) {
+func (c *FakeCoherenceClusters) Create(ctx context.Context, coherenceCluster *coherencev1.CoherenceCluster, opts v1.CreateOptions) (result *coherencev1.CoherenceCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewCreateAction(coherenceclustersResource, c.ns, coherenceCluster), &coherencev1.CoherenceCluster{})
 
@@ -77,7 +79,7 @@ func (c *FakeCoherenceClusters) Create(coherenceCluster *coherencev1.CoherenceCl
 }
 
 // Update takes the representation of a coherenceCluster and updates it. Returns the server's representation of the coherenceCluster, and an error, if there is any.
-func (c *FakeCoherenceClusters) Update(coherenceCluster *coherencev1.CoherenceCluster) (result *coherencev1.CoherenceCluster, err error) {
+func (c *FakeCoherenceClusters) Update(ctx context.Context, coherenceCluster *coherencev1.CoherenceCluster, opts v1.UpdateOptions) (result *coherencev1.CoherenceCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewUpdateAction(coherenceclustersResource, c.ns, coherenceCluster), &coherencev1.CoherenceCluster{})
 
@@ -88,7 +90,7 @@ func (c *FakeCoherenceClusters) Update(coherenceCluster *coherencev1.CoherenceCl
 }
 
 // Delete takes name of the coherenceCluster and deletes it. Returns an error if one occurs.
-func (c *FakeCoherenceClusters) Delete(name string, options *v1.DeleteOptions) error {
+func (c *FakeCoherenceClusters) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
 		Invokes(testing.NewDeleteAction(coherenceclustersResource, c.ns, name), &coherencev1.CoherenceCluster{})
 
@@ -96,15 +98,15 @@ func (c *FakeCoherenceClusters) Delete(name string, options *v1.DeleteOptions) e
 }
 
 // DeleteCollection deletes a collection of objects.
-func (c *FakeCoherenceClusters) DeleteCollection(options *v1.DeleteOptions, listOptions v1.ListOptions) error {
-	action := testing.NewDeleteCollectionAction(coherenceclustersResource, c.ns, listOptions)
+func (c *FakeCoherenceClusters) DeleteCollection(ctx context.Context, opts v1.DeleteOptions, listOpts v1.ListOptions) error {
+	action := testing.NewDeleteCollectionAction(coherenceclustersResource, c.ns, listOpts)
 
 	_, err := c.Fake.Invokes(action, &coherencev1.CoherenceClusterList{})
 	return err
 }
 
 // Patch applies the patch and returns the patched coherenceCluster.
-func (c *FakeCoherenceClusters) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *coherencev1.CoherenceCluster, err error) {
+func (c *FakeCoherenceClusters) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *coherencev1.CoherenceCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewPatchSubresourceAction(coherenceclustersResource, c.ns, name, pt, data, subresources...), &coherencev1.CoherenceCluster{})
 

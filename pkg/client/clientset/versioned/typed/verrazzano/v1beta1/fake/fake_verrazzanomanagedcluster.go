@@ -6,6 +6,8 @@
 package fake
 
 import (
+	"context"
+
 	v1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
@@ -26,7 +28,7 @@ var verrazzanomanagedclustersResource = schema.GroupVersionResource{Group: "verr
 var verrazzanomanagedclustersKind = schema.GroupVersionKind{Group: "verrazzano.io", Version: "v1beta1", Kind: "VerrazzanoManagedCluster"}
 
 // Get takes name of the verrazzanoManagedCluster, and returns the corresponding verrazzanoManagedCluster object, and an error if there is any.
-func (c *FakeVerrazzanoManagedClusters) Get(name string, options v1.GetOptions) (result *v1beta1.VerrazzanoManagedCluster, err error) {
+func (c *FakeVerrazzanoManagedClusters) Get(ctx context.Context, name string, options v1.GetOptions) (result *v1beta1.VerrazzanoManagedCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewGetAction(verrazzanomanagedclustersResource, c.ns, name), &v1beta1.VerrazzanoManagedCluster{})
 
@@ -37,7 +39,7 @@ func (c *FakeVerrazzanoManagedClusters) Get(name string, options v1.GetOptions) 
 }
 
 // List takes label and field selectors, and returns the list of VerrazzanoManagedClusters that match those selectors.
-func (c *FakeVerrazzanoManagedClusters) List(opts v1.ListOptions) (result *v1beta1.VerrazzanoManagedClusterList, err error) {
+func (c *FakeVerrazzanoManagedClusters) List(ctx context.Context, opts v1.ListOptions) (result *v1beta1.VerrazzanoManagedClusterList, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewListAction(verrazzanomanagedclustersResource, verrazzanomanagedclustersKind, c.ns, opts), &v1beta1.VerrazzanoManagedClusterList{})
 
@@ -59,14 +61,14 @@ func (c *FakeVerrazzanoManagedClusters) List(opts v1.ListOptions) (result *v1bet
 }
 
 // Watch returns a watch.Interface that watches the requested verrazzanoManagedClusters.
-func (c *FakeVerrazzanoManagedClusters) Watch(opts v1.ListOptions) (watch.Interface, error) {
+func (c *FakeVerrazzanoManagedClusters) Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error) {
 	return c.Fake.
 		InvokesWatch(testing.NewWatchAction(verrazzanomanagedclustersResource, c.ns, opts))
 
 }
 
 // Create takes the representation of a verrazzanoManagedCluster and creates it.  Returns the server's representation of the verrazzanoManagedCluster, and an error, if there is any.
-func (c *FakeVerrazzanoManagedClusters) Create(verrazzanoManagedCluster *v1beta1.VerrazzanoManagedCluster) (result *v1beta1.VerrazzanoManagedCluster, err error) {
+func (c *FakeVerrazzanoManagedClusters) Create(ctx context.Context, verrazzanoManagedCluster *v1beta1.VerrazzanoManagedCluster, opts v1.CreateOptions) (result *v1beta1.VerrazzanoManagedCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewCreateAction(verrazzanomanagedclustersResource, c.ns, verrazzanoManagedCluster), &v1beta1.VerrazzanoManagedCluster{})
 
@@ -77,7 +79,7 @@ func (c *FakeVerrazzanoManagedClusters) Create(verrazzanoManagedCluster *v1beta1
 }
 
 // Update takes the representation of a verrazzanoManagedCluster and updates it. Returns the server's representation of the verrazzanoManagedCluster, and an error, if there is any.
-func (c *FakeVerrazzanoManagedClusters) Update(verrazzanoManagedCluster *v1beta1.VerrazzanoManagedCluster) (result *v1beta1.VerrazzanoManagedCluster, err error) {
+func (c *FakeVerrazzanoManagedClusters) Update(ctx context.Context, verrazzanoManagedCluster *v1beta1.VerrazzanoManagedCluster, opts v1.UpdateOptions) (result *v1beta1.VerrazzanoManagedCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewUpdateAction(verrazzanomanagedclustersResource, c.ns, verrazzanoManagedCluster), &v1beta1.VerrazzanoManagedCluster{})
 
@@ -88,7 +90,7 @@ func (c *FakeVerrazzanoManagedClusters) Update(verrazzanoManagedCluster *v1beta1
 }
 
 // Delete takes name of the verrazzanoManagedCluster and deletes it. Returns an error if one occurs.
-func (c *FakeVerrazzanoManagedClusters) Delete(name string, options *v1.DeleteOptions) error {
+func (c *FakeVerrazzanoManagedClusters) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
 		Invokes(testing.NewDeleteAction(verrazzanomanagedclustersResource, c.ns, name), &v1beta1.VerrazzanoManagedCluster{})
 
@@ -96,15 +98,15 @@ func (c *FakeVerrazzanoManagedClusters) Delete(name string, options *v1.DeleteOp
 }
 
 // DeleteCollection deletes a collection of objects.
-func (c *FakeVerrazzanoManagedClusters) DeleteCollection(options *v1.DeleteOptions, listOptions v1.ListOptions) error {
-	action := testing.NewDeleteCollectionAction(verrazzanomanagedclustersResource, c.ns, listOptions)
+func (c *FakeVerrazzanoManagedClusters) DeleteCollection(ctx context.Context, opts v1.DeleteOptions, listOpts v1.ListOptions) error {
+	action := testing.NewDeleteCollectionAction(verrazzanomanagedclustersResource, c.ns, listOpts)
 
 	_, err := c.Fake.Invokes(action, &v1beta1.VerrazzanoManagedClusterList{})
 	return err
 }
 
 // Patch applies the patch and returns the patched verrazzanoManagedCluster.
-func (c *FakeVerrazzanoManagedClusters) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *v1beta1.VerrazzanoManagedCluster, err error) {
+func (c *FakeVerrazzanoManagedClusters) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *v1beta1.VerrazzanoManagedCluster, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewPatchSubresourceAction(verrazzanomanagedclustersResource, c.ns, name, pt, data, subresources...), &v1beta1.VerrazzanoManagedCluster{})
 

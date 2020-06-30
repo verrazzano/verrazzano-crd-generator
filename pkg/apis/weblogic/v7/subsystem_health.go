@@ -13,6 +13,6 @@ type SubsystemHealth struct {
 	SubsystemName string `json:"subsystemName"`
 
 	// Symptoms provided by the reporting subsystem.
-	// +listType
+	// +listType=set
 	Symptoms []string `json:"symptoms,omitempty"`
 }

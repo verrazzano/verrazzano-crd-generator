@@ -10,6 +10,6 @@ type AdminService struct {
 	// the Kubernetes cluster via a node port service, along with the node port for
 	// each channel. If not specified, the admin server's node port service will
 	// not be created.
-	// +listType
+	// +listType=set
 	Channels []Channel `json:"channels,omitempty"`
 }
