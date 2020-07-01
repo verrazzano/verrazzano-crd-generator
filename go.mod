@@ -18,7 +18,6 @@ require (
 
 replace (
 	github.com/Azure/go-autorest => github.com/Azure/go-autorest v13.3.2+incompatible // Required by OLM
-	gopkg.in/yaml.v2 => gopkg.in/yaml.v2 v2.2.2
 	k8s.io/client-go => k8s.io/client-go v0.18.2
 	k8s.io/code-generator => k8s.io/code-generator v0.18.2
 )
