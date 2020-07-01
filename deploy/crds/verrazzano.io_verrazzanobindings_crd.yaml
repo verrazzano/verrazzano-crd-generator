@@ -55,7 +55,6 @@ spec:
                   - name
                   type: object
                 type: array
-                x-kubernetes-list-type: set
               databaseBindings:
                 description: The set of database bindings
                 items:
@@ -77,7 +76,6 @@ spec:
                   - url
                   type: object
                 type: array
-                x-kubernetes-list-type: set
               description:
                 description: A description of the binding
                 type: string
@@ -100,7 +98,6 @@ spec:
                   - name
                   type: object
                 type: array
-                x-kubernetes-list-type: set
               ingressBindings:
                 description: The set of ingress bindings
                 items:
@@ -117,7 +114,6 @@ spec:
                   - name
                   type: object
                 type: array
-                x-kubernetes-list-type: set
               modelName:
                 description: The model name to associate the bindings
                 type: string
@@ -148,7 +144,6 @@ spec:
                               - name
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           name:
                             description: Name of the namespace
                             type: string
@@ -157,13 +152,11 @@ spec:
                         - name
                         type: object
                       type: array
-                      x-kubernetes-list-type: set
                   required:
                   - name
                   - namespaces
                   type: object
                 type: array
-                x-kubernetes-list-type: set
               weblogicBindings:
                 description: The set of weblogic bindings
                 items:
@@ -183,7 +176,6 @@ spec:
                   - name
                   type: object
                 type: array
-                x-kubernetes-list-type: set
             required:
             - description
             - modelName

@@ -68,7 +68,6 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           database:
                             description: Database Connections
                             items:
@@ -86,7 +85,6 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           ingress:
                             description: Ingress Connections
                             items:
@@ -112,7 +110,6 @@ spec:
                               - name
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           rest:
                             description: REST Connections
                             items:
@@ -135,10 +132,8 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                         type: object
                       type: array
-                      x-kubernetes-list-type: set
                     image:
                       description: The image:tag for the coherence user artifacts
                       type: string
@@ -200,7 +195,6 @@ spec:
                   - pofConfig
                   type: object
                 type: array
-                x-kubernetes-list-type: set
               description:
                 description: A description of the model
                 type: string
@@ -233,7 +227,6 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           database:
                             description: Database Connections
                             items:
@@ -251,7 +244,6 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           ingress:
                             description: Ingress Connections
                             items:
@@ -277,7 +269,6 @@ spec:
                               - name
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           rest:
                             description: REST Connections
                             items:
@@ -300,10 +291,8 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                         type: object
                       type: array
-                      x-kubernetes-list-type: set
                     fluentdEnabled:
                       description: Option to configure a Helidon application to use
                         Fluentd for scraping the applications log. By default, Fluentd
@@ -373,7 +362,6 @@ spec:
                   - name
                   type: object
                 type: array
-                x-kubernetes-list-type: set
               weblogicDomains:
                 description: The set of WebLogic domains
                 items:
@@ -406,7 +394,6 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           database:
                             description: Database Connections
                             items:
@@ -424,7 +411,6 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           ingress:
                             description: Ingress Connections
                             items:
@@ -450,7 +436,6 @@ spec:
                               - name
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                           rest:
                             description: REST Connections
                             items:
@@ -473,10 +458,8 @@ spec:
                               - target
                               type: object
                             type: array
-                            x-kubernetes-list-type: set
                         type: object
                       type: array
-                      x-kubernetes-list-type: set
                     domainCRValues:
                       description: Domain CR values, can provide any valid Domain
                         CR value
@@ -22004,7 +21987,6 @@ spec:
                   - name
                   type: object
                 type: array
-                x-kubernetes-list-type: set
             required:
             - description
             type: object

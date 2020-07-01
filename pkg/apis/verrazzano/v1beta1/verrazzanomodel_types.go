@@ -90,19 +90,19 @@ type VerrazzanoMetrics struct {
 // VerrazzanoConnections defines the connection for a component
 type VerrazzanoConnections struct {
 	// REST Connections
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Rest []VerrazzanoRestConnection `json:"rest,omitempty" yaml:"rest,omitempty"`
 
 	// Ingress Connections
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Ingress []VerrazzanoIngressConnection `json:"ingress,omitempty" yamml:"ingress,omitempty"`
 
 	// Database Connections
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Database []VerrazzanoDatabaseConnection `json:"database,omitempty" yaml:"database,omitempty"`
 
 	// Coherence Connections
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Coherence []VerrazzanoCoherenceConnection `json:"coherence,omitempty" yaml:"coherence,omitempty"`
 }
 
@@ -130,7 +130,7 @@ type VerrazzanoHelidon struct {
 	FluentdEnabled *bool `json:"fluentdEnabled,omitempty" yaml:"fluentdEnabled,omitempty"`
 
 	// Connections configuration
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
 
 	// Metrics configuration
@@ -160,7 +160,7 @@ type VerrazzanoCoherenceCluster struct {
 	CacheConfig string `json:"cacheConfig" yaml:"cacheConfig"`
 
 	// Connections configuration
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
 
 	// Metrics configuration
@@ -189,7 +189,7 @@ type VerrazzanoWebLogicDomain struct {
 	DomainCRValues v7.DomainSpec `json:"domainCRValues" yaml:"domainCRValues"`
 
 	// Connections configuration
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
 
 	// Metrics configuration
@@ -206,15 +206,15 @@ type VerrazzanoModelSpec struct {
 	Description string `json:"description" yaml:"description"`
 
 	// The set of WebLogic domains
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	WeblogicDomains []VerrazzanoWebLogicDomain `json:"weblogicDomains,omitempty" yaml:"weblogicDomains,omitempty"`
 
 	// The set of coherence clusters
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	CoherenceClusters []VerrazzanoCoherenceCluster `json:"coherenceClusters,omitempty" yaml:"coherenceClusters,omitempty"`
 
 	// The set of Helidon applications
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	HelidonApplications []VerrazzanoHelidon `json:"helidonApplications,omitempty" yaml:"helidonApplications,omitempty"`
 }
 

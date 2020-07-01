@@ -21,7 +21,7 @@ type VerrazzanoPlacement struct {
 	Name string `json:"name" yaml:"name"`
 
 	// Namespaces for this placement
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Namespaces []KubernetesNamespace `json:"namespaces" yaml:"namespaces"`
 }
 
@@ -32,7 +32,7 @@ type KubernetesNamespace struct {
 	Name string `json:"name" yaml:"name"`
 
 	// Names of components in the namespace
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Components []BindingComponent `json:"components" yaml:"components"`
 }
 
@@ -105,27 +105,27 @@ type VerrazzanoBindingSpec struct {
 	ModelName string `json:"modelName" yaml:"modelName"`
 
 	// The set of weblogic bindings
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	WeblogicBindings []VerrazzanoWeblogicBinding `json:"weblogicBindings,omitempty" yaml:"weblogicBindings,omitempty"`
 
 	// The set of coherence bindings
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	CoherenceBindings []VerrazzanoCoherenceBinding `json:"coherenceBindings,omitempty" yaml:"coherenceBindings,omitempty"`
 
 	// The set of helidon application bindings
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	HelidonBindings []VerrazzanoHelidonBinding `json:"helidonBindings,omitempty" yaml:"helidonBindings,omitempty"`
 
 	// The set of database bindings
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	DatabaseBindings []VerrazzanoDatabaseBinding `json:"databaseBindings,omitempty" yaml:"databaseBindings,omitempty"`
 
 	// The set of ingress bindings
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	IngressBindings []VerrazzanoIngressBinding `json:"ingressBindings,omitempty" yaml:"ingressBindings,omitempty"`
 
 	// The set of Placement definitions
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Placement []VerrazzanoPlacement `json:"placement" yaml:"placement"`
 }
 
