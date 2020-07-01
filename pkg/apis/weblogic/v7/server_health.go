@@ -16,6 +16,6 @@ type ServerHealth struct {
 	OverallHealth string `json:"overallHealth,omitempty"`
 
 	// Status of unhealthy subsystems, if any
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Subsystems []SubsystemHealth `json:"subsystems,omitempty"`
 }

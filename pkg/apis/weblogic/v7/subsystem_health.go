@@ -13,6 +13,6 @@ type SubsystemHealth struct {
 	SubsystemName string `json:"subsystemName"`
 
 	// Symptoms provided by the reporting subsystem.
-	// +listType=set
+	// +x-kubernetes-list-type=set
 	Symptoms []string `json:"symptoms,omitempty"`
 }

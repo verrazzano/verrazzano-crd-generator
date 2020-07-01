@@ -495,7 +495,6 @@ spec:
                                     - channelName
                                     type: object
                                   type: array
-                                  x-kubernetes-list-type: set
                               type: object
                             restartVersion:
                               description: If present, every time this value is updated
@@ -11340,14 +11339,12 @@ spec:
                             - clusterName
                             type: object
                           type: array
-                          x-kubernetes-list-type: set
                         configOverrideSecrets:
                           description: A list of names of the secrets for optional
                             WebLogic configuration overrides
                           items:
                             type: string
                           type: array
-                          x-kubernetes-list-type: set
                         configOverrides:
                           description: The name of the config map for optional WebLogic
                             configuration overrides
@@ -11401,7 +11398,6 @@ spec:
                             - name
                             type: object
                           type: array
-                          x-kubernetes-list-type: set
                         includeServerOutInPodLog:
                           description: If true (the default), the server .out file
                             will be included in the pod's stdout.
@@ -16892,7 +16888,6 @@ spec:
                             - serverName
                             type: object
                           type: array
-                          x-kubernetes-list-type: set
                         replicas:
                           description: 'The number of managed servers to run in any
                             cluster that does not specify a replica count. This is
