@@ -6,6 +6,7 @@
 package v1beta1
 
 import (
+	"context"
 	time "time"
 
 	verrazzanov1beta1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1"
@@ -48,13 +49,13 @@ func NewFilteredVerrazzanoBindingInformer(client versioned.Interface, namespace 
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.VerrazzanoV1beta1().VerrazzanoBindings(namespace).List(options)
+				return client.VerrazzanoV1beta1().VerrazzanoBindings(namespace).List(context.TODO(), options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.VerrazzanoV1beta1().VerrazzanoBindings(namespace).Watch(options)
+				return client.VerrazzanoV1beta1().VerrazzanoBindings(namespace).Watch(context.TODO(), options)
 			},
 		},
 		&verrazzanov1beta1.VerrazzanoBinding{},

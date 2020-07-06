@@ -6,6 +6,8 @@
 package fake
 
 import (
+	"context"
+
 	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
@@ -26,7 +28,7 @@ var coherenceinternalsResource = schema.GroupVersionResource{Group: "coherence.o
 var coherenceinternalsKind = schema.GroupVersionKind{Group: "coherence.oracle.com", Version: "v1", Kind: "CoherenceInternal"}
 
 // Get takes name of the coherenceInternal, and returns the corresponding coherenceInternal object, and an error if there is any.
-func (c *FakeCoherenceInternals) Get(name string, options v1.GetOptions) (result *coherencev1.CoherenceInternal, err error) {
+func (c *FakeCoherenceInternals) Get(ctx context.Context, name string, options v1.GetOptions) (result *coherencev1.CoherenceInternal, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewGetAction(coherenceinternalsResource, c.ns, name), &coherencev1.CoherenceInternal{})
 
@@ -37,7 +39,7 @@ func (c *FakeCoherenceInternals) Get(name string, options v1.GetOptions) (result
 }
 
 // List takes label and field selectors, and returns the list of CoherenceInternals that match those selectors.
-func (c *FakeCoherenceInternals) List(opts v1.ListOptions) (result *coherencev1.CoherenceInternalList, err error) {
+func (c *FakeCoherenceInternals) List(ctx context.Context, opts v1.ListOptions) (result *coherencev1.CoherenceInternalList, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewListAction(coherenceinternalsResource, coherenceinternalsKind, c.ns, opts), &coherencev1.CoherenceInternalList{})
 
@@ -59,14 +61,14 @@ func (c *FakeCoherenceInternals) List(opts v1.ListOptions) (result *coherencev1.
 }
 
 // Watch returns a watch.Interface that watches the requested coherenceInternals.
-func (c *FakeCoherenceInternals) Watch(opts v1.ListOptions) (watch.Interface, error) {
+func (c *FakeCoherenceInternals) Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error) {
 	return c.Fake.
 		InvokesWatch(testing.NewWatchAction(coherenceinternalsResource, c.ns, opts))
 
 }
 
 // Create takes the representation of a coherenceInternal and creates it.  Returns the server's representation of the coherenceInternal, and an error, if there is any.
-func (c *FakeCoherenceInternals) Create(coherenceInternal *coherencev1.CoherenceInternal) (result *coherencev1.CoherenceInternal, err error) {
+func (c *FakeCoherenceInternals) Create(ctx context.Context, coherenceInternal *coherencev1.CoherenceInternal, opts v1.CreateOptions) (result *coherencev1.CoherenceInternal, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewCreateAction(coherenceinternalsResource, c.ns, coherenceInternal), &coherencev1.CoherenceInternal{})
 
@@ -77,7 +79,7 @@ func (c *FakeCoherenceInternals) Create(coherenceInternal *coherencev1.Coherence
 }
 
 // Update takes the representation of a coherenceInternal and updates it. Returns the server's representation of the coherenceInternal, and an error, if there is any.
-func (c *FakeCoherenceInternals) Update(coherenceInternal *coherencev1.CoherenceInternal) (result *coherencev1.CoherenceInternal, err error) {
+func (c *FakeCoherenceInternals) Update(ctx context.Context, coherenceInternal *coherencev1.CoherenceInternal, opts v1.UpdateOptions) (result *coherencev1.CoherenceInternal, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewUpdateAction(coherenceinternalsResource, c.ns, coherenceInternal), &coherencev1.CoherenceInternal{})
 
@@ -88,7 +90,7 @@ func (c *FakeCoherenceInternals) Update(coherenceInternal *coherencev1.Coherence
 }
 
 // Delete takes name of the coherenceInternal and deletes it. Returns an error if one occurs.
-func (c *FakeCoherenceInternals) Delete(name string, options *v1.DeleteOptions) error {
+func (c *FakeCoherenceInternals) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
 		Invokes(testing.NewDeleteAction(coherenceinternalsResource, c.ns, name), &coherencev1.CoherenceInternal{})
 
@@ -96,15 +98,15 @@ func (c *FakeCoherenceInternals) Delete(name string, options *v1.DeleteOptions) 
 }
 
 // DeleteCollection deletes a collection of objects.
-func (c *FakeCoherenceInternals) DeleteCollection(options *v1.DeleteOptions, listOptions v1.ListOptions) error {
-	action := testing.NewDeleteCollectionAction(coherenceinternalsResource, c.ns, listOptions)
+func (c *FakeCoherenceInternals) DeleteCollection(ctx context.Context, opts v1.DeleteOptions, listOpts v1.ListOptions) error {
+	action := testing.NewDeleteCollectionAction(coherenceinternalsResource, c.ns, listOpts)
 
 	_, err := c.Fake.Invokes(action, &coherencev1.CoherenceInternalList{})
 	return err
 }
 
 // Patch applies the patch and returns the patched coherenceInternal.
-func (c *FakeCoherenceInternals) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *coherencev1.CoherenceInternal, err error) {
+func (c *FakeCoherenceInternals) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts v1.PatchOptions, subresources ...string) (result *coherencev1.CoherenceInternal, err error) {
 	obj, err := c.Fake.
 		Invokes(testing.NewPatchSubresourceAction(coherenceinternalsResource, c.ns, name, pt, data, subresources...), &coherencev1.CoherenceInternal{})
 

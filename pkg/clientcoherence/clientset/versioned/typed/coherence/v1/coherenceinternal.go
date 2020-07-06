@@ -6,6 +6,7 @@
 package v1
 
 import (
+	"context"
 	"time"
 
 	v1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
@@ -24,14 +25,14 @@ type CoherenceInternalsGetter interface {
 
 // CoherenceInternalInterface has methods to work with CoherenceInternal resources.
 type CoherenceInternalInterface interface {
-	Create(*v1.CoherenceInternal) (*v1.CoherenceInternal, error)
-	Update(*v1.CoherenceInternal) (*v1.CoherenceInternal, error)
-	Delete(name string, options *metav1.DeleteOptions) error
-	DeleteCollection(options *metav1.DeleteOptions, listOptions metav1.ListOptions) error
-	Get(name string, options metav1.GetOptions) (*v1.CoherenceInternal, error)
-	List(opts metav1.ListOptions) (*v1.CoherenceInternalList, error)
-	Watch(opts metav1.ListOptions) (watch.Interface, error)
-	Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *v1.CoherenceInternal, err error)
+	Create(ctx context.Context, coherenceInternal *v1.CoherenceInternal, opts metav1.CreateOptions) (*v1.CoherenceInternal, error)
+	Update(ctx context.Context, coherenceInternal *v1.CoherenceInternal, opts metav1.UpdateOptions) (*v1.CoherenceInternal, error)
+	Delete(ctx context.Context, name string, opts metav1.DeleteOptions) error
+	DeleteCollection(ctx context.Context, opts metav1.DeleteOptions, listOpts metav1.ListOptions) error
+	Get(ctx context.Context, name string, opts metav1.GetOptions) (*v1.CoherenceInternal, error)
+	List(ctx context.Context, opts metav1.ListOptions) (*v1.CoherenceInternalList, error)
+	Watch(ctx context.Context, opts metav1.ListOptions) (watch.Interface, error)
+	Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts metav1.PatchOptions, subresources ...string) (result *v1.CoherenceInternal, err error)
 	CoherenceInternalExpansion
 }
 
@@ -50,20 +51,20 @@ func newCoherenceInternals(c *CoherenceV1Client, namespace string) *coherenceInt
 }
 
 // Get takes name of the coherenceInternal, and returns the corresponding coherenceInternal object, and an error if there is any.
-func (c *coherenceInternals) Get(name string, options metav1.GetOptions) (result *v1.CoherenceInternal, err error) {
+func (c *coherenceInternals) Get(ctx context.Context, name string, options metav1.GetOptions) (result *v1.CoherenceInternal, err error) {
 	result = &v1.CoherenceInternal{}
 	err = c.client.Get().
 		Namespace(c.ns).
 		Resource("coherenceinternals").
 		Name(name).
 		VersionedParams(&options, scheme.ParameterCodec).
-		Do().
+		Do(ctx).
 		Into(result)
 	return
 }
 
 // List takes label and field selectors, and returns the list of CoherenceInternals that match those selectors.
-func (c *coherenceInternals) List(opts metav1.ListOptions) (result *v1.CoherenceInternalList, err error) {
+func (c *coherenceInternals) List(ctx context.Context, opts metav1.ListOptions) (result *v1.CoherenceInternalList, err error) {
 	var timeout time.Duration
 	if opts.TimeoutSeconds != nil {
 		timeout = time.Duration(*opts.TimeoutSeconds) * time.Second
@@ -74,13 +75,13 @@ func (c *coherenceInternals) List(opts metav1.ListOptions) (result *v1.Coherence
 		Resource("coherenceinternals").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Do().
+		Do(ctx).
 		Into(result)
 	return
 }
 
 // Watch returns a watch.Interface that watches the requested coherenceInternals.
-func (c *coherenceInternals) Watch(opts metav1.ListOptions) (watch.Interface, error) {
+func (c *coherenceInternals) Watch(ctx context.Context, opts metav1.ListOptions) (watch.Interface, error) {
 	var timeout time.Duration
 	if opts.TimeoutSeconds != nil {
 		timeout = time.Duration(*opts.TimeoutSeconds) * time.Second
@@ -91,71 +92,74 @@ func (c *coherenceInternals) Watch(opts metav1.ListOptions) (watch.Interface, er
 		Resource("coherenceinternals").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Watch()
+		Watch(ctx)
 }
 
 // Create takes the representation of a coherenceInternal and creates it.  Returns the server's representation of the coherenceInternal, and an error, if there is any.
-func (c *coherenceInternals) Create(coherenceInternal *v1.CoherenceInternal) (result *v1.CoherenceInternal, err error) {
+func (c *coherenceInternals) Create(ctx context.Context, coherenceInternal *v1.CoherenceInternal, opts metav1.CreateOptions) (result *v1.CoherenceInternal, err error) {
 	result = &v1.CoherenceInternal{}
 	err = c.client.Post().
 		Namespace(c.ns).
 		Resource("coherenceinternals").
+		VersionedParams(&opts, scheme.ParameterCodec).
 		Body(coherenceInternal).
-		Do().
+		Do(ctx).
 		Into(result)
 	return
 }
 
 // Update takes the representation of a coherenceInternal and updates it. Returns the server's representation of the coherenceInternal, and an error, if there is any.
-func (c *coherenceInternals) Update(coherenceInternal *v1.CoherenceInternal) (result *v1.CoherenceInternal, err error) {
+func (c *coherenceInternals) Update(ctx context.Context, coherenceInternal *v1.CoherenceInternal, opts metav1.UpdateOptions) (result *v1.CoherenceInternal, err error) {
 	result = &v1.CoherenceInternal{}
 	err = c.client.Put().
 		Namespace(c.ns).
 		Resource("coherenceinternals").
 		Name(coherenceInternal.Name).
+		VersionedParams(&opts, scheme.ParameterCodec).
 		Body(coherenceInternal).
-		Do().
+		Do(ctx).
 		Into(result)
 	return
 }
 
 // Delete takes name of the coherenceInternal and deletes it. Returns an error if one occurs.
-func (c *coherenceInternals) Delete(name string, options *metav1.DeleteOptions) error {
+func (c *coherenceInternals) Delete(ctx context.Context, name string, opts metav1.DeleteOptions) error {
 	return c.client.Delete().
 		Namespace(c.ns).
 		Resource("coherenceinternals").
 		Name(name).
-		Body(options).
-		Do().
+		Body(&opts).
+		Do(ctx).
 		Error()
 }
 
 // DeleteCollection deletes a collection of objects.
-func (c *coherenceInternals) DeleteCollection(options *metav1.DeleteOptions, listOptions metav1.ListOptions) error {
+func (c *coherenceInternals) DeleteCollection(ctx context.Context, opts metav1.DeleteOptions, listOpts metav1.ListOptions) error {
 	var timeout time.Duration
-	if listOptions.TimeoutSeconds != nil {
-		timeout = time.Duration(*listOptions.TimeoutSeconds) * time.Second
+	if listOpts.TimeoutSeconds != nil {
+		timeout = time.Duration(*listOpts.TimeoutSeconds) * time.Second
 	}
 	return c.client.Delete().
 		Namespace(c.ns).
 		Resource("coherenceinternals").
-		VersionedParams(&listOptions, scheme.ParameterCodec).
+		VersionedParams(&listOpts, scheme.ParameterCodec).
 		Timeout(timeout).
-		Body(options).
-		Do().
+		Body(&opts).
+		Do(ctx).
 		Error()
 }
 
 // Patch applies the patch and returns the patched coherenceInternal.
-func (c *coherenceInternals) Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *v1.CoherenceInternal, err error) {
+func (c *coherenceInternals) Patch(ctx context.Context, name string, pt types.PatchType, data []byte, opts metav1.PatchOptions, subresources ...string) (result *v1.CoherenceInternal, err error) {
 	result = &v1.CoherenceInternal{}
 	err = c.client.Patch(pt).
 		Namespace(c.ns).
 		Resource("coherenceinternals").
-		SubResource(subresources...).
 		Name(name).
+		SubResource(subresources...).
+		VersionedParams(&opts, scheme.ParameterCodec).
 		Body(data).
-		Do().
+		Do(ctx).
 		Into(result)
 	return
 }

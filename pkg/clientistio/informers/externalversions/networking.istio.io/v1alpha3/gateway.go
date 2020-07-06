@@ -6,6 +6,7 @@
 package v1alpha3
 
 import (
+	"context"
 	time "time"
 
 	networkingistioiov1alpha3 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3"
@@ -48,13 +49,13 @@ func NewFilteredGatewayInformer(client versioned.Interface, namespace string, re
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.NetworkingV1alpha3().Gateways(namespace).List(options)
+				return client.NetworkingV1alpha3().Gateways(namespace).List(context.TODO(), options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.NetworkingV1alpha3().Gateways(namespace).Watch(options)
+				return client.NetworkingV1alpha3().Gateways(namespace).Watch(context.TODO(), options)
 			},
 		},
 		&networkingistioiov1alpha3.Gateway{},

@@ -37,7 +37,7 @@ type DomainSpec struct {
 	ImagePullPolicy string `json:"imagePullPolicy,omitempty"`
 
 	// A list of image pull secrets for the WebLogic Docker image
-	// +listType
+	// +x-kubernetes-list-type=set
 	ImagePullSecrets []WebLogicSecret `json:"imagePullSecrets"`
 
 	// The number of managed servers to run in any cluster that does not specify a replica count.
@@ -53,7 +53,7 @@ type DomainSpec struct {
 	ConfigOverrides string `json:"configOverrides,omitempty"`
 
 	// A list of names of the secrets for optional WebLogic configuration overrides
-	// +listType
+	// +x-kubernetes-list-type=set
 	ConfigOverrideSecrets []string `json:"configOverrideSecrets,omitempty"`
 
 	// Configuration for the admin server
@@ -61,11 +61,11 @@ type DomainSpec struct {
 	AdminServer AdminServer `json:"adminServer,omitempty"`
 
 	// Configuration for individual Managed Servers
-	// +listType
+	// +x-kubernetes-list-type=set
 	ManagedServers []ManagedServer `json:"managedServers,omitempty"`
 
 	// Configuration for the clusters
-	// +listType
+	// +x-kubernetes-list-type=set
 	Clusters []Cluster `json:"clusters"`
 
 	// Configurations

@@ -11,10 +11,16 @@ go-build: go-mod
 	./hack/update-codegen-weblogic.sh
 	./hack/update-codegen-istio.sh
 	./hack/update-codegen-coherence.sh
-	operator-sdk generate openapi
+	operator-sdk generate k8s
+	operator-sdk generate crds
 
-        # Add copyright headers to the operator-sdk
-        # generated CRDs
+	# These crds are generated but not needed
+	rm deploy/crds/coherence.oracle.com*
+	rm deploy/crds/networking.istio.io*
+	rm deploy/crds/weblogic.oracle*
+
+	# Add copyright headers to the operator-sdk
+	# generated CRDs
 	./hack/add-crd-header.sh
 
 .PHONY: go-mod

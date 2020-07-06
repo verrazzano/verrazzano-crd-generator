@@ -10,7 +10,7 @@ import (
 // +k8s:openapi-gen=true
 type ServerPod struct {
 	// A list of environment variables to add to a server
-	// +listType
+	// +x-kubernetes-list-type=set
 	Env []corev1.EnvVar `json:"env,omitempty"`
 
 	// Settings for the liveness probe associated with a server.
@@ -27,11 +27,11 @@ type ServerPod struct {
 
 	// InitContainers holds a list of initialization containers that should
 	// be run before starting the main containers in this pod.
-	// +listType
+	// +x-kubernetes-list-type=set
 	InitContainers []corev1.Container `json:"initContainers,omitempty"`
 
 	// Additional containers to be included in the server pod
-	// +listType
+	// +x-kubernetes-list-type=set
 	Containers []corev1.Container `json:"containers,omitempty"`
 
 	// If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical"
@@ -43,7 +43,7 @@ type ServerPod struct {
 	// If specified, all readiness gates will be evaluated for pod readiness. A pod is ready when all its
 	// containers are ready AND all conditions specified in the readiness gates have status equal to "True" More
 	// info: https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md"
-	// +listType
+	// +x-kubernetes-list-type=set
 	ReadinessGates []corev1.PodReadinessGate `json:"readinessGates,omitempty"`
 
 	// Restart policy for all containers within the pod. One of Always, OnFailure, Never. Default to Always.
@@ -64,7 +64,7 @@ type ServerPod struct {
 	SchedulerName string `json:"schedulerName,omitempty"`
 
 	// If specified, the pod's tolerations.
-	// +listType
+	// +x-kubernetes-list-type=set
 	Tolerations []corev1.Toleration `json:"tolerations,omitempty"`
 
 	// Name of the ServiceAccount to be used to run this pod. If it is not set, default
@@ -80,10 +80,10 @@ type ServerPod struct {
 	Shutdown Shutdown `json:"shutdown,omitempty"`
 
 	// Additional volumes to be created in the server pod
-	// +listType
+	// +x-kubernetes-list-type=set
 	Volumes []corev1.Volume `json:"volumes,omitempty"`
 
 	// Additional volume mounts for the server pod
-	// +listType
+	// +x-kubernetes-list-type=set
 	VolumeMounts []corev1.VolumeMount `json:"volumeMounts,omitempty"`
 }

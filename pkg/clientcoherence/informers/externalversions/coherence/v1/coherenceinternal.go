@@ -6,6 +6,7 @@
 package v1
 
 import (
+	"context"
 	time "time"
 
 	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
@@ -48,13 +49,13 @@ func NewFilteredCoherenceInternalInformer(client versioned.Interface, namespace 
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.CoherenceV1().CoherenceInternals(namespace).List(options)
+				return client.CoherenceV1().CoherenceInternals(namespace).List(context.TODO(), options)
 			},
 			WatchFunc: func(options metav1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.CoherenceV1().CoherenceInternals(namespace).Watch(options)
+				return client.CoherenceV1().CoherenceInternals(namespace).Watch(context.TODO(), options)
 			},
 		},
 		&coherencev1.CoherenceInternal{},
