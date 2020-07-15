@@ -42,5 +42,5 @@ go-mod:
 
 PHONY: thirdparty-check
 thirdparty-check:
-        ./build/scripts/thirdparty_check.sh
+	./build/scripts/thirdparty_check.sh
 
