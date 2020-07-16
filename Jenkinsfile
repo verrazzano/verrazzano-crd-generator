@@ -19,10 +19,6 @@ pipeline {
     }
 
     environment {
-        DOCKER_CI_IMAGE_NAME = 'verrazzano-crd-generator-jenkins'
-        DOCKER_PUBLISH_IMAGE_NAME = 'verrazzano-crd-generator-operator'
-        DOCKER_IMAGE_NAME = "${env.BRANCH_NAME == 'master' ? env.DOCKER_PUBLISH_IMAGE_NAME : env.DOCKER_CI_IMAGE_NAME}"
-        CREATE_LATEST_TAG = "${env.BRANCH_NAME == 'master' ? '1' : '0'}"
         GOPATH = '/home/opc/go'
         GO_REPO_PATH = "${GOPATH}/src/github.com/verrazzano"
         DOCKER_CREDS = credentials('ocir-pull-and-push-account')
@@ -42,7 +38,6 @@ pipeline {
         }
 
         stage('Build') {
-            when { not { buildingTag() } }
             steps {
                 sh """
                     cd ${GO_REPO_PATH}/verrazzano-crd-generator
@@ -52,7 +47,6 @@ pipeline {
         }
 
 	stage('Third Party License Check') {
-            when { not { buildingTag() } }
             steps {
                 sh """
                     cd ${GO_REPO_PATH}/verrazzano-crd-generator
@@ -62,7 +56,6 @@ pipeline {
         }
 
         stage('Copyright Compliance Check') {
-            when { not { buildingTag() } }
             steps {
                 copyrightScan "${WORKSPACE}"
             }
