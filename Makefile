@@ -39,8 +39,3 @@ go-mod:
 	chmod +x vendor/${CODEGEN_PATH}/generate-groups.sh
 	cp -R ${GOPATH}/pkg/mod/${CODEGEN_PATH}@${codeGenVer}/cmd/defaulter-gen vendor/${CODEGEN_PATH}/cmd/defaulter-gen
 	chmod -R +w vendor/${CODEGEN_PATH}/cmd/defaulter-gen
-
-PHONY: thirdparty-check
-thirdparty-check:
-	./build/scripts/thirdparty_check.sh
-
