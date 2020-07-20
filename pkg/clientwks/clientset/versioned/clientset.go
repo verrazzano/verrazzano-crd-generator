@@ -8,7 +8,7 @@ package versioned
 import (
 	"fmt"
 
-	weblogicv7 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v7"
+	weblogicv8 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/clientset/versioned/typed/weblogic/v8"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"
@@ -16,19 +16,19 @@ import (
 
 type Interface interface {
 	Discovery() discovery.DiscoveryInterface
-	WeblogicV7() weblogicv7.WeblogicV7Interface
+	WeblogicV8() weblogicv8.WeblogicV8Interface
 }
 
 // Clientset contains the clients for groups. Each group has exactly one
 // version included in a Clientset.
 type Clientset struct {
 	*discovery.DiscoveryClient
-	weblogicV7 *weblogicv7.WeblogicV7Client
+	weblogicV8 *weblogicv8.WeblogicV8Client
 }
 
-// WeblogicV7 retrieves the WeblogicV7Client
-func (c *Clientset) WeblogicV7() weblogicv7.WeblogicV7Interface {
-	return c.weblogicV7
+// WeblogicV8 retrieves the WeblogicV8Client
+func (c *Clientset) WeblogicV8() weblogicv8.WeblogicV8Interface {
+	return c.weblogicV8
 }
 
 // Discovery retrieves the DiscoveryClient
@@ -52,7 +52,7 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 	}
 	var cs Clientset
 	var err error
-	cs.weblogicV7, err = weblogicv7.NewForConfig(&configShallowCopy)
+	cs.weblogicV8, err = weblogicv8.NewForConfig(&configShallowCopy)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func NewForConfig(c *rest.Config) (*Clientset, error) {
 // panics if there is an error in the config.
 func NewForConfigOrDie(c *rest.Config) *Clientset {
 	var cs Clientset
-	cs.weblogicV7 = weblogicv7.NewForConfigOrDie(c)
+	cs.weblogicV8 = weblogicv8.NewForConfigOrDie(c)
 
 	cs.DiscoveryClient = discovery.NewDiscoveryClientForConfigOrDie(c)
 	return &cs
@@ -77,7 +77,7 @@ func NewForConfigOrDie(c *rest.Config) *Clientset {
 // New creates a new Clientset for the given RESTClient.
 func New(c rest.Interface) *Clientset {
 	var cs Clientset
-	cs.weblogicV7 = weblogicv7.New(c)
+	cs.weblogicV8 = weblogicv8.New(c)
 
 	cs.DiscoveryClient = discovery.NewDiscoveryClient(c)
 	return &cs

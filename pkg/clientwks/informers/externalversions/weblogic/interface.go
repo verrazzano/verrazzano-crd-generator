@@ -7,13 +7,13 @@ package weblogic
 
 import (
 	internalinterfaces "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/internalinterfaces"
-	v7 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/weblogic/v7"
+	v8 "github.com/verrazzano/verrazzano-crd-generator/pkg/clientwks/informers/externalversions/weblogic/v8"
 )
 
 // Interface provides access to each of this group's versions.
 type Interface interface {
-	// V7 provides access to shared informers for resources in V7.
-	V7() v7.Interface
+	// V8 provides access to shared informers for resources in V8.
+	V8() v8.Interface
 }
 
 type group struct {
@@ -27,7 +27,7 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &group{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
-// V7 returns a new v7.Interface.
-func (g *group) V7() v7.Interface {
-	return v7.New(g.factory, g.namespace, g.tweakListOptions)
+// V8 returns a new v8.Interface.
+func (g *group) V8() v8.Interface {
+	return v8.New(g.factory, g.namespace, g.tweakListOptions)
 }
