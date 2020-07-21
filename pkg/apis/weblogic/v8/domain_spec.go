@@ -92,7 +92,7 @@ type DomainSpec struct {
 	// The maximum number of cluster member Managed Server instances that the operator will start in parallel
 	// for a given cluster, if maxConcurrentStartup is not specified for a specific cluster under the clusters field.
 	// A value of 0 means there is no configured limit. Defaults to 0.
-	MaxConcurrentStartup int32 `json:"maxConcurrentStartup,omitempty"`
+	MaxClusterConcurrentStartup int32 `json:"maxClusterConcurrentStartup,omitempty"`
 
 	// The number of managed servers to run in any cluster that does not specify a replica count.
 	// This is a pointer to distinguish between explicit zero and not specified.

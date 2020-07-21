@@ -21,7 +21,7 @@ type Cluster struct {
 	// response to a change in the replicas count. If more Managed Server instances must be started, the operator
 	// will wait until a Managed Server Pod is in the Ready state before starting the next Managed Server instance.
 	// A value of 0 means all Managed Server instances will start in parallel. Defaults to 0.
-	MaxConcurrentStartup int32 `json:"maxConcurrentStartup, omitempty"`
+	MaxConcurrentStartup int32 `json:"maxConcurrentStartup,omitempty"`
 
 	// The maximum number of cluster members that can be temporarily unavailable. Defaults to 1.
 	MaxUnavailable int64 `json:"maxUnavailable,omitempty"`
