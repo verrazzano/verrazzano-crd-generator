@@ -11697,7 +11697,6 @@ spec:
                                 type: string
                             required:
                             - clusterName
-                            - maxConcurrentStartup
                             type: object
                           type: array
                         configOverrideSecrets:
@@ -17514,7 +17513,7 @@ spec:
                             - serverName
                             type: object
                           type: array
-                        maxConcurrentStartup:
+                        maxClusterConcurrentStartup:
                           description: The maximum number of cluster member Managed
                             Server instances that the operator will start in parallel
                             for a given cluster, if maxConcurrentStartup is not specified
