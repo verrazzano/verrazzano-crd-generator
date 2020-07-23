@@ -5,3 +5,7 @@ vendor
 build/_output
 build/_test
 .idea
+known_licenses.txt
+no_licenses.txt
+thirdparty_licenses/known_licenses.txt
+thirdparty_licenses/no_licenses.txt
