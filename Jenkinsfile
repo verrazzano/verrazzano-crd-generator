@@ -46,10 +46,7 @@ pipeline {
 
         stage('Third Party License Check') {
             steps {
-                sh """
-                    cd ${GO_REPO_PATH}/verrazzano-crd-generator
-                    make thirdparty-check
-                """
+                thirdpartyCheck()
             }
         }
 
