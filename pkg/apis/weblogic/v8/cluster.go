@@ -24,7 +24,7 @@ type Cluster struct {
 	MaxConcurrentStartup int32 `json:"maxConcurrentStartup,omitempty"`
 
 	// The maximum number of cluster members that can be temporarily unavailable. Defaults to 1.
-	MaxUnavailable int64 `json:"maxUnavailable,omitempty"`
+	MaxUnavailable int32 `json:"maxUnavailable,omitempty"`
 
 	// The number of managed servers to run in this cluster
 	// Note: this value is required by WebLogic Operator, but is marked optional because Verrazzano can provide a default value.
