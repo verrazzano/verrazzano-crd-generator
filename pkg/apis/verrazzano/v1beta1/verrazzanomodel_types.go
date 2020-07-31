@@ -4,7 +4,7 @@
 package v1beta1
 
 import (
-	"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v7"
+	"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v8"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -186,7 +186,7 @@ type VerrazzanoWebLogicDomain struct {
 	FluentdEnabled bool `json:"fluentdEnabled,omitempty" yaml:"fluentdEnabled,omitempty"`
 
 	// Domain CR values, can provide any valid Domain CR value
-	DomainCRValues v7.DomainSpec `json:"domainCRValues" yaml:"domainCRValues"`
+	DomainCRValues v8.DomainSpec `json:"domainCRValues" yaml:"domainCRValues"`
 
 	// Connections configuration
 	// +x-kubernetes-list-type=set

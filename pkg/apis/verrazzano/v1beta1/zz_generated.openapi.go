@@ -1224,7 +1224,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref common.Refe
 					"domainCRValues": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Domain CR values, can provide any valid Domain CR value",
-							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v7.DomainSpec"),
+							Ref:         ref("github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v8.DomainSpec"),
 						},
 					},
 					"connections": {
@@ -1262,7 +1262,7 @@ func schema_pkg_apis_verrazzano_v1beta1_VerrazzanoWebLogicDomain(ref common.Refe
 			},
 		},
 		Dependencies: []string{
-			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v7.DomainSpec"},
+			"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoConnections", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoLogging", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/verrazzano/v1beta1.VerrazzanoMetrics", "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v8.DomainSpec"},
 	}
 }
 

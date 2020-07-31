@@ -474,6 +474,12 @@ spec:
                                 WebLogic admin channels should be exposed outside
                                 the Kubernetes cluster via a node port service.
                               properties:
+                                annotations:
+                                  additionalProperties:
+                                    type: string
+                                  description: The annotations to be added to generated
+                                    resources.
+                                  type: object
                                 channels:
                                   description: Specifies which of the admin server's
                                     WebLogic channels should be exposed outside the
@@ -495,6 +501,13 @@ spec:
                                     - channelName
                                     type: object
                                   type: array
+                                labels:
+                                  additionalProperties:
+                                    type: string
+                                  description: The labels to be added to generated
+                                    resources. The label names must not start with
+                                    "weblogic.".
+                                  type: object
                               type: object
                             restartVersion:
                               description: If present, every time this value is updated
@@ -1271,6 +1284,152 @@ spec:
                                             - topologyKey
                                             type: object
                                           type: array
+                                      type: object
+                                  type: object
+                                annotations:
+                                  additionalProperties:
+                                    type: string
+                                  description: The annotations to be added to generated
+                                    resources.
+                                  type: object
+                                containerSecurityContext:
+                                  description: Container-level security attributes.
+                                    Will override any matching Pod-level attributes.
+                                    See kubectl explain pods.spec.containers.securityContext.
+                                  properties:
+                                    allowPrivilegeEscalation:
+                                      description: 'AllowPrivilegeEscalation controls
+                                        whether a process can gain more privileges
+                                        than its parent process. This bool directly
+                                        controls if the no_new_privs flag will be
+                                        set on the container process. AllowPrivilegeEscalation
+                                        is true always when the container is: 1) run
+                                        as Privileged 2) has CAP_SYS_ADMIN'
+                                      type: boolean
+                                    capabilities:
+                                      description: The capabilities to add/drop when
+                                        running containers. Defaults to the default
+                                        set of capabilities granted by the container
+                                        runtime.
+                                      properties:
+                                        add:
+                                          description: Added capabilities
+                                          items:
+                                            description: Capability represent POSIX
+                                              capabilities type
+                                            type: string
+                                          type: array
+                                        drop:
+                                          description: Removed capabilities
+                                          items:
+                                            description: Capability represent POSIX
+                                              capabilities type
+                                            type: string
+                                          type: array
+                                      type: object
+                                    privileged:
+                                      description: Run container in privileged mode.
+                                        Processes in privileged containers are essentially
+                                        equivalent to root on the host. Defaults to
+                                        false.
+                                      type: boolean
+                                    procMount:
+                                      description: procMount denotes the type of proc
+                                        mount to use for the containers. The default
+                                        is DefaultProcMount which uses the container
+                                        runtime defaults for readonly paths and masked
+                                        paths. This requires the ProcMountType feature
+                                        flag to be enabled.
+                                      type: string
+                                    readOnlyRootFilesystem:
+                                      description: Whether this container has a read-only
+                                        root filesystem. Default is false.
+                                      type: boolean
+                                    runAsGroup:
+                                      description: The GID to run the entrypoint of
+                                        the container process. Uses runtime default
+                                        if unset. May also be set in PodSecurityContext.  If
+                                        set in both SecurityContext and PodSecurityContext,
+                                        the value specified in SecurityContext takes
+                                        precedence.
+                                      format: int64
+                                      type: integer
+                                    runAsNonRoot:
+                                      description: Indicates that the container must
+                                        run as a non-root user. If true, the Kubelet
+                                        will validate the image at runtime to ensure
+                                        that it does not run as UID 0 (root) and fail
+                                        to start the container if it does. If unset
+                                        or false, no such validation will be performed.
+                                        May also be set in PodSecurityContext.  If
+                                        set in both SecurityContext and PodSecurityContext,
+                                        the value specified in SecurityContext takes
+                                        precedence.
+                                      type: boolean
+                                    runAsUser:
+                                      description: The UID to run the entrypoint of
+                                        the container process. Defaults to user specified
+                                        in image metadata if unspecified. May also
+                                        be set in PodSecurityContext.  If set in both
+                                        SecurityContext and PodSecurityContext, the
+                                        value specified in SecurityContext takes precedence.
+                                      format: int64
+                                      type: integer
+                                    seLinuxOptions:
+                                      description: The SELinux context to be applied
+                                        to the container. If unspecified, the container
+                                        runtime will allocate a random SELinux context
+                                        for each container.  May also be set in PodSecurityContext.  If
+                                        set in both SecurityContext and PodSecurityContext,
+                                        the value specified in SecurityContext takes
+                                        precedence.
+                                      properties:
+                                        level:
+                                          description: Level is SELinux level label
+                                            that applies to the container.
+                                          type: string
+                                        role:
+                                          description: Role is a SELinux role label
+                                            that applies to the container.
+                                          type: string
+                                        type:
+                                          description: Type is a SELinux type label
+                                            that applies to the container.
+                                          type: string
+                                        user:
+                                          description: User is a SELinux user label
+                                            that applies to the container.
+                                          type: string
+                                      type: object
+                                    windowsOptions:
+                                      description: The Windows specific settings applied
+                                        to all containers. If unspecified, the options
+                                        from the PodSecurityContext will be used.
+                                        If set in both SecurityContext and PodSecurityContext,
+                                        the value specified in SecurityContext takes
+                                        precedence.
+                                      properties:
+                                        gmsaCredentialSpec:
+                                          description: GMSACredentialSpec is where
+                                            the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa)
+                                            inlines the contents of the GMSA credential
+                                            spec named by the GMSACredentialSpecName
+                                            field.
+                                          type: string
+                                        gmsaCredentialSpecName:
+                                          description: GMSACredentialSpecName is the
+                                            name of the GMSA credential spec to use.
+                                          type: string
+                                        runAsUserName:
+                                          description: The UserName in Windows to
+                                            run the entrypoint of the container process.
+                                            Defaults to the user specified in image
+                                            metadata if unspecified. May also be set
+                                            in PodSecurityContext. If set in both
+                                            SecurityContext and PodSecurityContext,
+                                            the value specified in SecurityContext
+                                            takes precedence.
+                                          type: string
                                       type: object
                                   type: object
                                 containers:
@@ -3933,6 +4092,13 @@ spec:
                                     - name
                                     type: object
                                   type: array
+                                labels:
+                                  additionalProperties:
+                                    type: string
+                                  description: The labels to be added to generated
+                                    resources. The label names must not start with
+                                    "weblogic.".
+                                  type: object
                                 livenessProbe:
                                   description: Settings for the liveness probe associated
                                     with a server.
@@ -4211,6 +4377,8 @@ spec:
                                     at the time the pod is created.
                                   type: string
                                 shutdown:
+                                  description: Configures how the operator should
+                                    shut down the server instance.
                                   properties:
                                     ignoreSessions:
                                       description: For graceful shutdown only, indicates
@@ -5804,15 +5972,15 @@ spec:
                                 annotations:
                                   additionalProperties:
                                     type: string
-                                  description: The annotations to be attached to generated
+                                  description: The annotations to be added to generated
                                     resources.
                                   type: object
                                 labels:
                                   additionalProperties:
                                     type: string
-                                  description: The labels to be attached to generated
+                                  description: The labels to be added to generated
                                     resources. The label names must not start with
-                                    'weblogic.
+                                    "weblogic.".
                                   type: object
                                 precreateService:
                                   description: If true, operator will create server
@@ -5823,8 +5991,11 @@ spec:
                               - precreateService
                               type: object
                             serverStartPolicy:
-                              description: The strategy for deciding whether to start
-                                a server. Legal values are ALWAYS, NEVER, or IF_NEEDED.
+                              description: 'The strategy for deciding whether to start
+                                a server.  Legal values are ADMIN_ONLY, NEVER, or
+                                IF_NEEDED. Note: this value is required by WebLogic
+                                Operator, but is marked optional because Verrazzano
+                                can provide a default value.'
                               type: string
                             serverStartState:
                               description: The state in which the server is to be
@@ -5833,10 +6004,27 @@ spec:
                           required:
                           - adminService
                           type: object
+                        allowReplicasBelowMinDynClusterSize:
+                          description: Whether to allow the number of running cluster
+                            member Managed Server instances to drop below the minimum
+                            dynamic cluster size configured in the WebLogic domain
+                            configuration, if this is not specified for a specific
+                            cluster under the clusters field. Defaults to true.
+                          type: boolean
                         clusters:
                           description: Configuration for the clusters
                           items:
                             properties:
+                              allowReplicasBelowMinDynClusterSize:
+                                description: Specifies whether the number of running
+                                  cluster members is allowed to drop below the minimum
+                                  dynamic cluster size configured in the WebLogic
+                                  domain configuration. Otherwise, the operator will
+                                  ensure that the number of running cluster members
+                                  is not less than the minimum dynamic cluster setting.
+                                  This setting applies to dynamic clusters only. Defaults
+                                  to true.
+                                type: boolean
                               clusterName:
                                 description: The name of this cluster
                                 type: string
@@ -5858,6 +6046,18 @@ spec:
                                       'weblogic.
                                     type: object
                                 type: object
+                              maxConcurrentStartup:
+                                description: The maximum number of Managed Servers
+                                  instances that the operator will start in parallel
+                                  for this cluster in response to a change in the
+                                  replicas count. If more Managed Server instances
+                                  must be started, the operator will wait until a
+                                  Managed Server Pod is in the Ready state before
+                                  starting the next Managed Server instance. A value
+                                  of 0 means all Managed Server instances will start
+                                  in parallel. Defaults to 0.
+                                format: int32
+                                type: integer
                               maxUnavailable:
                                 description: The maximum number of cluster members
                                   that can be temporarily unavailable. Defaults to
@@ -6668,6 +6868,154 @@ spec:
                                               - topologyKey
                                               type: object
                                             type: array
+                                        type: object
+                                    type: object
+                                  annotations:
+                                    additionalProperties:
+                                      type: string
+                                    description: The annotations to be added to generated
+                                      resources.
+                                    type: object
+                                  containerSecurityContext:
+                                    description: Container-level security attributes.
+                                      Will override any matching Pod-level attributes.
+                                      See kubectl explain pods.spec.containers.securityContext.
+                                    properties:
+                                      allowPrivilegeEscalation:
+                                        description: 'AllowPrivilegeEscalation controls
+                                          whether a process can gain more privileges
+                                          than its parent process. This bool directly
+                                          controls if the no_new_privs flag will be
+                                          set on the container process. AllowPrivilegeEscalation
+                                          is true always when the container is: 1)
+                                          run as Privileged 2) has CAP_SYS_ADMIN'
+                                        type: boolean
+                                      capabilities:
+                                        description: The capabilities to add/drop
+                                          when running containers. Defaults to the
+                                          default set of capabilities granted by the
+                                          container runtime.
+                                        properties:
+                                          add:
+                                            description: Added capabilities
+                                            items:
+                                              description: Capability represent POSIX
+                                                capabilities type
+                                              type: string
+                                            type: array
+                                          drop:
+                                            description: Removed capabilities
+                                            items:
+                                              description: Capability represent POSIX
+                                                capabilities type
+                                              type: string
+                                            type: array
+                                        type: object
+                                      privileged:
+                                        description: Run container in privileged mode.
+                                          Processes in privileged containers are essentially
+                                          equivalent to root on the host. Defaults
+                                          to false.
+                                        type: boolean
+                                      procMount:
+                                        description: procMount denotes the type of
+                                          proc mount to use for the containers. The
+                                          default is DefaultProcMount which uses the
+                                          container runtime defaults for readonly
+                                          paths and masked paths. This requires the
+                                          ProcMountType feature flag to be enabled.
+                                        type: string
+                                      readOnlyRootFilesystem:
+                                        description: Whether this container has a
+                                          read-only root filesystem. Default is false.
+                                        type: boolean
+                                      runAsGroup:
+                                        description: The GID to run the entrypoint
+                                          of the container process. Uses runtime default
+                                          if unset. May also be set in PodSecurityContext.  If
+                                          set in both SecurityContext and PodSecurityContext,
+                                          the value specified in SecurityContext takes
+                                          precedence.
+                                        format: int64
+                                        type: integer
+                                      runAsNonRoot:
+                                        description: Indicates that the container
+                                          must run as a non-root user. If true, the
+                                          Kubelet will validate the image at runtime
+                                          to ensure that it does not run as UID 0
+                                          (root) and fail to start the container if
+                                          it does. If unset or false, no such validation
+                                          will be performed. May also be set in PodSecurityContext.  If
+                                          set in both SecurityContext and PodSecurityContext,
+                                          the value specified in SecurityContext takes
+                                          precedence.
+                                        type: boolean
+                                      runAsUser:
+                                        description: The UID to run the entrypoint
+                                          of the container process. Defaults to user
+                                          specified in image metadata if unspecified.
+                                          May also be set in PodSecurityContext.  If
+                                          set in both SecurityContext and PodSecurityContext,
+                                          the value specified in SecurityContext takes
+                                          precedence.
+                                        format: int64
+                                        type: integer
+                                      seLinuxOptions:
+                                        description: The SELinux context to be applied
+                                          to the container. If unspecified, the container
+                                          runtime will allocate a random SELinux context
+                                          for each container.  May also be set in
+                                          PodSecurityContext.  If set in both SecurityContext
+                                          and PodSecurityContext, the value specified
+                                          in SecurityContext takes precedence.
+                                        properties:
+                                          level:
+                                            description: Level is SELinux level label
+                                              that applies to the container.
+                                            type: string
+                                          role:
+                                            description: Role is a SELinux role label
+                                              that applies to the container.
+                                            type: string
+                                          type:
+                                            description: Type is a SELinux type label
+                                              that applies to the container.
+                                            type: string
+                                          user:
+                                            description: User is a SELinux user label
+                                              that applies to the container.
+                                            type: string
+                                        type: object
+                                      windowsOptions:
+                                        description: The Windows specific settings
+                                          applied to all containers. If unspecified,
+                                          the options from the PodSecurityContext
+                                          will be used. If set in both SecurityContext
+                                          and PodSecurityContext, the value specified
+                                          in SecurityContext takes precedence.
+                                        properties:
+                                          gmsaCredentialSpec:
+                                            description: GMSACredentialSpec is where
+                                              the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa)
+                                              inlines the contents of the GMSA credential
+                                              spec named by the GMSACredentialSpecName
+                                              field.
+                                            type: string
+                                          gmsaCredentialSpecName:
+                                            description: GMSACredentialSpecName is
+                                              the name of the GMSA credential spec
+                                              to use.
+                                            type: string
+                                          runAsUserName:
+                                            description: The UserName in Windows to
+                                              run the entrypoint of the container
+                                              process. Defaults to the user specified
+                                              in image metadata if unspecified. May
+                                              also be set in PodSecurityContext. If
+                                              set in both SecurityContext and PodSecurityContext,
+                                              the value specified in SecurityContext
+                                              takes precedence.
+                                            type: string
                                         type: object
                                     type: object
                                   containers:
@@ -9380,6 +9728,13 @@ spec:
                                       - name
                                       type: object
                                     type: array
+                                  labels:
+                                    additionalProperties:
+                                      type: string
+                                    description: The labels to be added to generated
+                                      resources. The label names must not start with
+                                      "weblogic.".
+                                    type: object
                                   livenessProbe:
                                     description: Settings for the liveness probe associated
                                       with a server.
@@ -9668,6 +10023,8 @@ spec:
                                       has to exist at the time the pod is created.
                                     type: string
                                   shutdown:
+                                    description: Configures how the operator should
+                                      shut down the server instance.
                                     properties:
                                       ignoreSessions:
                                         description: For graceful shutdown only, indicates
@@ -11309,15 +11666,15 @@ spec:
                                   annotations:
                                     additionalProperties:
                                       type: string
-                                    description: The annotations to be attached to
-                                      generated resources.
+                                    description: The annotations to be added to generated
+                                      resources.
                                     type: object
                                   labels:
                                     additionalProperties:
                                       type: string
-                                    description: The labels to be attached to generated
+                                    description: The labels to be added to generated
                                       resources. The label names must not start with
-                                      'weblogic.
+                                      "weblogic.".
                                     type: object
                                   precreateService:
                                     description: If true, operator will create server
@@ -11328,8 +11685,11 @@ spec:
                                 - precreateService
                                 type: object
                               serverStartPolicy:
-                                description: The strategy for deciding whether to
-                                  start a server. Legal values are NEVER, or IF_NEEDED.
+                                description: 'The strategy for deciding whether to
+                                  start a server.  Legal values are ADMIN_ONLY, NEVER,
+                                  or IF_NEEDED. Note: this value is required by WebLogic
+                                  Operator, but is marked optional because Verrazzano
+                                  can provide a default value.'
                                 type: string
                               serverStartState:
                                 description: The state in which the server is to be
@@ -11352,6 +11712,12 @@ spec:
                         configuration:
                           description: Configurations
                           properties:
+                            introspectorJobActiveDeadlineSeconds:
+                              description: The introspector job timeout value in seconds.
+                                If this field is specified, then the operator's ConfigMap
+                                data.introspectorJobActiveDeadlineSeconds value is
+                                ignored. Defaults to 120 seconds.
+                              type: integer
                             istio:
                               description: Istio service mesh integration configuration
                               properties:
@@ -11364,7 +11730,81 @@ spec:
                                     Defaults to 8888.
                                   type: integer
                               type: object
+                            model:
+                              description: Model in image model files and properties.
+                              properties:
+                                configMap:
+                                  description: Name of a ConfigMap containing the
+                                    WebLogic Deploy Tooling model.
+                                  type: string
+                                domainType:
+                                  description: 'WebLogic Deploy Tooling domain type.
+                                    Legal values: WLS, RestrictedJRF, JRF. Defaults
+                                    to WLS.'
+                                  type: string
+                                runtimeEncryptionSecret:
+                                  description: Runtime encryption secret. Required
+                                    when domainHomeSourceType is set to FromModel.
+                                  type: string
+                              type: object
+                            opss:
+                              description: Settings for OPSS security.
+                              properties:
+                                walletFileSecret:
+                                  description: Name of a Secret containing the OPSS
+                                    key wallet file, which must be in a field named
+                                    walletFile. Use this to allow a JRF domain to
+                                    reuse its entries in the RCU database. This allows
+                                    you to specify a wallet file that was obtained
+                                    from the domain home after the domain was booted
+                                    for the first time.
+                                  type: string
+                                walletPasswordSecret:
+                                  description: Name of a Secret containing the OPSS
+                                    key passphrase, which must be in a field named
+                                    walletPassword. Used to encrypt and decrypt the
+                                    wallet that is used for accessing the domain's
+                                    entries in its RCU database.
+                                  type: string
+                              type: object
+                            overrideDistributionStrategy:
+                              description: Determines how updated configuration overrides
+                                are distributed to already running WebLogic Server
+                                instances following introspection when the domainHomeSourceType
+                                is PersistentVolume or Image. Configuration overrides
+                                are generated during introspection from Secrets, the
+                                overrideConfigMap field, and WebLogic domain topology.
+                                Legal values are DYNAMIC, which means that the operator
+                                will distribute updated configuration overrides dynamically
+                                to running servers, and ON_RESTART, which means that
+                                servers will use updated configuration overrides only
+                                after the server's next restart. The selection of
+                                ON_RESTART will not cause servers to restart when
+                                there are updated configuration overrides available.
+                                See also domains.spec.introspectVersion. Defaults
+                                to DYNAMIC.
+                              type: string
+                            overridesConfigMap:
+                              description: The name of the ConfigMap for WebLogic
+                                configuration overrides. If this field is specified,
+                                then the value of spec.configOverrides is ignored.
+                              type: string
+                            secrets:
+                              description: A list of names of the Secrets for WebLogic
+                                configuration overrides or model. If this field is
+                                specified, then the value of spec.configOverrideSecrets
+                                is ignored.
+                              items:
+                                type: string
+                              type: array
                           type: object
+                        dataHome:
+                          description: An optional directory in a server's container
+                            for data storage of default and custom file stores. If
+                            dataHome is not specified or its value is either not set
+                            or empty, then the data storage directories are determined
+                            from the WebLogic domain configuration.
+                          type: string
                         domainHome:
                           description: The folder for the WebLogic Domain
                           type: string
@@ -11374,9 +11814,29 @@ spec:
                             by WebLogic Operator, but is marked optional because Verrazzano
                             can provide a default value.'
                           type: boolean
+                        domainHomeSourceType:
+                          description: 'Domain home file system source type: Legal
+                            values: Image, PersistentVolume, FromModel. Image indicates
+                            that the domain home file system is present in the container
+                            image specified by the image field. PersistentVolume indicates
+                            that the domain home file system is located on a persistent
+                            volume. FromModel indicates that the domain home file
+                            system will be created and managed by the operator based
+                            on a WDT domain model. If this field is specified, it
+                            overrides the value of domainHomeInImage. If both fields
+                            are unspecified, then domainHomeSourceType defaults to
+                            Image.'
+                          type: string
                         domainUID:
                           description: The name of the WebLogic domain
                           type: string
+                        httpAccessLogInLogHome:
+                          description: Specifies whether the server HTTP access log
+                            files will be written to the same directory specified
+                            in logHome. Otherwise, server HTTP access log files will
+                            be written to the directory configured in the WebLogic
+                            domain configuration. Defaults to true.
+                          type: boolean
                         image:
                           description: The WebLogic Docker image; required when domainHomeInImage
                             is true
@@ -11389,19 +11849,25 @@ spec:
                           description: A list of image pull secrets for the WebLogic
                             Docker image
                           items:
-                            description: WebLogicSecret identifies the secret that
-                              contains the WebLogic admin credentials
+                            description: LocalObjectReference contains enough information
+                              to let you locate the referenced object inside the same
+                              namespace.
                             properties:
                               name:
+                                description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                                  TODO: Add other useful fields. apiVersion, kind,
+                                  uid?'
                                 type: string
-                            required:
-                            - name
                             type: object
                           type: array
                         includeServerOutInPodLog:
                           description: If true (the default), the server .out file
                             will be included in the pod's stdout.
                           type: boolean
+                        introspectVersion:
+                          description: Changes to this field cause the operator to
+                            repeat its introspection of the WebLogic domain configuration.
+                          type: string
                         logHome:
                           description: The in-pod name of the directory in which to
                             store the domain, node manager, server logs, and server
@@ -12218,6 +12684,154 @@ spec:
                                             type: array
                                         type: object
                                     type: object
+                                  annotations:
+                                    additionalProperties:
+                                      type: string
+                                    description: The annotations to be added to generated
+                                      resources.
+                                    type: object
+                                  containerSecurityContext:
+                                    description: Container-level security attributes.
+                                      Will override any matching Pod-level attributes.
+                                      See kubectl explain pods.spec.containers.securityContext.
+                                    properties:
+                                      allowPrivilegeEscalation:
+                                        description: 'AllowPrivilegeEscalation controls
+                                          whether a process can gain more privileges
+                                          than its parent process. This bool directly
+                                          controls if the no_new_privs flag will be
+                                          set on the container process. AllowPrivilegeEscalation
+                                          is true always when the container is: 1)
+                                          run as Privileged 2) has CAP_SYS_ADMIN'
+                                        type: boolean
+                                      capabilities:
+                                        description: The capabilities to add/drop
+                                          when running containers. Defaults to the
+                                          default set of capabilities granted by the
+                                          container runtime.
+                                        properties:
+                                          add:
+                                            description: Added capabilities
+                                            items:
+                                              description: Capability represent POSIX
+                                                capabilities type
+                                              type: string
+                                            type: array
+                                          drop:
+                                            description: Removed capabilities
+                                            items:
+                                              description: Capability represent POSIX
+                                                capabilities type
+                                              type: string
+                                            type: array
+                                        type: object
+                                      privileged:
+                                        description: Run container in privileged mode.
+                                          Processes in privileged containers are essentially
+                                          equivalent to root on the host. Defaults
+                                          to false.
+                                        type: boolean
+                                      procMount:
+                                        description: procMount denotes the type of
+                                          proc mount to use for the containers. The
+                                          default is DefaultProcMount which uses the
+                                          container runtime defaults for readonly
+                                          paths and masked paths. This requires the
+                                          ProcMountType feature flag to be enabled.
+                                        type: string
+                                      readOnlyRootFilesystem:
+                                        description: Whether this container has a
+                                          read-only root filesystem. Default is false.
+                                        type: boolean
+                                      runAsGroup:
+                                        description: The GID to run the entrypoint
+                                          of the container process. Uses runtime default
+                                          if unset. May also be set in PodSecurityContext.  If
+                                          set in both SecurityContext and PodSecurityContext,
+                                          the value specified in SecurityContext takes
+                                          precedence.
+                                        format: int64
+                                        type: integer
+                                      runAsNonRoot:
+                                        description: Indicates that the container
+                                          must run as a non-root user. If true, the
+                                          Kubelet will validate the image at runtime
+                                          to ensure that it does not run as UID 0
+                                          (root) and fail to start the container if
+                                          it does. If unset or false, no such validation
+                                          will be performed. May also be set in PodSecurityContext.  If
+                                          set in both SecurityContext and PodSecurityContext,
+                                          the value specified in SecurityContext takes
+                                          precedence.
+                                        type: boolean
+                                      runAsUser:
+                                        description: The UID to run the entrypoint
+                                          of the container process. Defaults to user
+                                          specified in image metadata if unspecified.
+                                          May also be set in PodSecurityContext.  If
+                                          set in both SecurityContext and PodSecurityContext,
+                                          the value specified in SecurityContext takes
+                                          precedence.
+                                        format: int64
+                                        type: integer
+                                      seLinuxOptions:
+                                        description: The SELinux context to be applied
+                                          to the container. If unspecified, the container
+                                          runtime will allocate a random SELinux context
+                                          for each container.  May also be set in
+                                          PodSecurityContext.  If set in both SecurityContext
+                                          and PodSecurityContext, the value specified
+                                          in SecurityContext takes precedence.
+                                        properties:
+                                          level:
+                                            description: Level is SELinux level label
+                                              that applies to the container.
+                                            type: string
+                                          role:
+                                            description: Role is a SELinux role label
+                                              that applies to the container.
+                                            type: string
+                                          type:
+                                            description: Type is a SELinux type label
+                                              that applies to the container.
+                                            type: string
+                                          user:
+                                            description: User is a SELinux user label
+                                              that applies to the container.
+                                            type: string
+                                        type: object
+                                      windowsOptions:
+                                        description: The Windows specific settings
+                                          applied to all containers. If unspecified,
+                                          the options from the PodSecurityContext
+                                          will be used. If set in both SecurityContext
+                                          and PodSecurityContext, the value specified
+                                          in SecurityContext takes precedence.
+                                        properties:
+                                          gmsaCredentialSpec:
+                                            description: GMSACredentialSpec is where
+                                              the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa)
+                                              inlines the contents of the GMSA credential
+                                              spec named by the GMSACredentialSpecName
+                                              field.
+                                            type: string
+                                          gmsaCredentialSpecName:
+                                            description: GMSACredentialSpecName is
+                                              the name of the GMSA credential spec
+                                              to use.
+                                            type: string
+                                          runAsUserName:
+                                            description: The UserName in Windows to
+                                              run the entrypoint of the container
+                                              process. Defaults to the user specified
+                                              in image metadata if unspecified. May
+                                              also be set in PodSecurityContext. If
+                                              set in both SecurityContext and PodSecurityContext,
+                                              the value specified in SecurityContext
+                                              takes precedence.
+                                            type: string
+                                        type: object
+                                    type: object
                                   containers:
                                     description: Additional containers to be included
                                       in the server pod
@@ -14928,6 +15542,13 @@ spec:
                                       - name
                                       type: object
                                     type: array
+                                  labels:
+                                    additionalProperties:
+                                      type: string
+                                    description: The labels to be added to generated
+                                      resources. The label names must not start with
+                                      "weblogic.".
+                                    type: object
                                   livenessProbe:
                                     description: Settings for the liveness probe associated
                                       with a server.
@@ -15216,6 +15837,8 @@ spec:
                                       has to exist at the time the pod is created.
                                     type: string
                                   shutdown:
+                                    description: Configures how the operator should
+                                      shut down the server instance.
                                     properties:
                                       ignoreSessions:
                                         description: For graceful shutdown only, indicates
@@ -16857,15 +17480,15 @@ spec:
                                   annotations:
                                     additionalProperties:
                                       type: string
-                                    description: The annotations to be attached to
-                                      generated resources.
+                                    description: The annotations to be added to generated
+                                      resources.
                                     type: object
                                   labels:
                                     additionalProperties:
                                       type: string
-                                    description: The labels to be attached to generated
+                                    description: The labels to be added to generated
                                       resources. The label names must not start with
-                                      'weblogic.
+                                      "weblogic.".
                                     type: object
                                   precreateService:
                                     description: If true, operator will create server
@@ -16876,9 +17499,11 @@ spec:
                                 - precreateService
                                 type: object
                               serverStartPolicy:
-                                description: The strategy for deciding whether to
-                                  start a server. Legal values are ALWAYS, NEVER,
-                                  or IF_NEEDED.
+                                description: 'The strategy for deciding whether to
+                                  start a server.  Legal values are ADMIN_ONLY, NEVER,
+                                  or IF_NEEDED. Note: this value is required by WebLogic
+                                  Operator, but is marked optional because Verrazzano
+                                  can provide a default value.'
                                 type: string
                               serverStartState:
                                 description: The state in which the server is to be
@@ -16888,6 +17513,14 @@ spec:
                             - serverName
                             type: object
                           type: array
+                        maxClusterConcurrentStartup:
+                          description: The maximum number of cluster member Managed
+                            Server instances that the operator will start in parallel
+                            for a given cluster, if maxConcurrentStartup is not specified
+                            for a specific cluster under the clusters field. A value
+                            of 0 means there is no configured limit. Defaults to 0.
+                          format: int32
+                          type: integer
                         replicas:
                           description: 'The number of managed servers to run in any
                             cluster that does not specify a replica count. This is
@@ -17598,6 +18231,144 @@ spec:
                                         - topologyKey
                                         type: object
                                       type: array
+                                  type: object
+                              type: object
+                            annotations:
+                              additionalProperties:
+                                type: string
+                              description: The annotations to be added to generated
+                                resources.
+                              type: object
+                            containerSecurityContext:
+                              description: Container-level security attributes. Will
+                                override any matching Pod-level attributes. See kubectl
+                                explain pods.spec.containers.securityContext.
+                              properties:
+                                allowPrivilegeEscalation:
+                                  description: 'AllowPrivilegeEscalation controls
+                                    whether a process can gain more privileges than
+                                    its parent process. This bool directly controls
+                                    if the no_new_privs flag will be set on the container
+                                    process. AllowPrivilegeEscalation is true always
+                                    when the container is: 1) run as Privileged 2)
+                                    has CAP_SYS_ADMIN'
+                                  type: boolean
+                                capabilities:
+                                  description: The capabilities to add/drop when running
+                                    containers. Defaults to the default set of capabilities
+                                    granted by the container runtime.
+                                  properties:
+                                    add:
+                                      description: Added capabilities
+                                      items:
+                                        description: Capability represent POSIX capabilities
+                                          type
+                                        type: string
+                                      type: array
+                                    drop:
+                                      description: Removed capabilities
+                                      items:
+                                        description: Capability represent POSIX capabilities
+                                          type
+                                        type: string
+                                      type: array
+                                  type: object
+                                privileged:
+                                  description: Run container in privileged mode. Processes
+                                    in privileged containers are essentially equivalent
+                                    to root on the host. Defaults to false.
+                                  type: boolean
+                                procMount:
+                                  description: procMount denotes the type of proc
+                                    mount to use for the containers. The default is
+                                    DefaultProcMount which uses the container runtime
+                                    defaults for readonly paths and masked paths.
+                                    This requires the ProcMountType feature flag to
+                                    be enabled.
+                                  type: string
+                                readOnlyRootFilesystem:
+                                  description: Whether this container has a read-only
+                                    root filesystem. Default is false.
+                                  type: boolean
+                                runAsGroup:
+                                  description: The GID to run the entrypoint of the
+                                    container process. Uses runtime default if unset.
+                                    May also be set in PodSecurityContext.  If set
+                                    in both SecurityContext and PodSecurityContext,
+                                    the value specified in SecurityContext takes precedence.
+                                  format: int64
+                                  type: integer
+                                runAsNonRoot:
+                                  description: Indicates that the container must run
+                                    as a non-root user. If true, the Kubelet will
+                                    validate the image at runtime to ensure that it
+                                    does not run as UID 0 (root) and fail to start
+                                    the container if it does. If unset or false, no
+                                    such validation will be performed. May also be
+                                    set in PodSecurityContext.  If set in both SecurityContext
+                                    and PodSecurityContext, the value specified in
+                                    SecurityContext takes precedence.
+                                  type: boolean
+                                runAsUser:
+                                  description: The UID to run the entrypoint of the
+                                    container process. Defaults to user specified
+                                    in image metadata if unspecified. May also be
+                                    set in PodSecurityContext.  If set in both SecurityContext
+                                    and PodSecurityContext, the value specified in
+                                    SecurityContext takes precedence.
+                                  format: int64
+                                  type: integer
+                                seLinuxOptions:
+                                  description: The SELinux context to be applied to
+                                    the container. If unspecified, the container runtime
+                                    will allocate a random SELinux context for each
+                                    container.  May also be set in PodSecurityContext.  If
+                                    set in both SecurityContext and PodSecurityContext,
+                                    the value specified in SecurityContext takes precedence.
+                                  properties:
+                                    level:
+                                      description: Level is SELinux level label that
+                                        applies to the container.
+                                      type: string
+                                    role:
+                                      description: Role is a SELinux role label that
+                                        applies to the container.
+                                      type: string
+                                    type:
+                                      description: Type is a SELinux type label that
+                                        applies to the container.
+                                      type: string
+                                    user:
+                                      description: User is a SELinux user label that
+                                        applies to the container.
+                                      type: string
+                                  type: object
+                                windowsOptions:
+                                  description: The Windows specific settings applied
+                                    to all containers. If unspecified, the options
+                                    from the PodSecurityContext will be used. If set
+                                    in both SecurityContext and PodSecurityContext,
+                                    the value specified in SecurityContext takes precedence.
+                                  properties:
+                                    gmsaCredentialSpec:
+                                      description: GMSACredentialSpec is where the
+                                        GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa)
+                                        inlines the contents of the GMSA credential
+                                        spec named by the GMSACredentialSpecName field.
+                                      type: string
+                                    gmsaCredentialSpecName:
+                                      description: GMSACredentialSpecName is the name
+                                        of the GMSA credential spec to use.
+                                      type: string
+                                    runAsUserName:
+                                      description: The UserName in Windows to run
+                                        the entrypoint of the container process. Defaults
+                                        to the user specified in image metadata if
+                                        unspecified. May also be set in PodSecurityContext.
+                                        If set in both SecurityContext and PodSecurityContext,
+                                        the value specified in SecurityContext takes
+                                        precedence.
+                                      type: string
                                   type: object
                               type: object
                             containers:
@@ -20118,6 +20889,12 @@ spec:
                                 - name
                                 type: object
                               type: array
+                            labels:
+                              additionalProperties:
+                                type: string
+                              description: The labels to be added to generated resources.
+                                The label names must not start with "weblogic.".
+                              type: object
                             livenessProbe:
                               description: Settings for the liveness probe associated
                                 with a server.
@@ -20385,6 +21162,8 @@ spec:
                                 time the pod is created.
                               type: string
                             shutdown:
+                              description: Configures how the operator should shut
+                                down the server instance.
                               properties:
                                 ignoreSessions:
                                   description: For graceful shutdown only, indicates
@@ -21892,14 +22671,14 @@ spec:
                             annotations:
                               additionalProperties:
                                 type: string
-                              description: The annotations to be attached to generated
+                              description: The annotations to be added to generated
                                 resources.
                               type: object
                             labels:
                               additionalProperties:
                                 type: string
-                              description: The labels to be attached to generated
-                                resources. The label names must not start with 'weblogic.
+                              description: The labels to be added to generated resources.
+                                The label names must not start with "weblogic.".
                               type: object
                             precreateService:
                               description: If true, operator will create server services
@@ -21925,9 +22704,13 @@ spec:
                             password needed to boot WebLogic Server
                           properties:
                             name:
+                              description: Name is unique within a namespace to reference
+                                a secret resource.
                               type: string
-                          required:
-                          - name
+                            namespace:
+                              description: Namespace defines the space within which
+                                the secret name must be unique.
+                              type: string
                           type: object
                       required:
                       - clusters
