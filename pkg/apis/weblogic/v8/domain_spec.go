@@ -22,7 +22,7 @@ type DomainSpec struct {
 
 	// Configuration for the clusters
 	// +x-kubernetes-list-type=set
-	Clusters []Cluster `json:"clusters"`
+	Clusters []Cluster `json:"clusters,omitempty"`
 
 	// The name of the config map for optional WebLogic configuration overrides
 	ConfigOverrides string `json:"configOverrides,omitempty"`
