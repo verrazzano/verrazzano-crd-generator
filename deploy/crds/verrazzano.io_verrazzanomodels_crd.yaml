@@ -6062,7 +6062,7 @@ spec:
                                 description: The maximum number of cluster members
                                   that can be temporarily unavailable. Defaults to
                                   1.
-                                format: int64
+                                format: int32
                                 type: integer
                               replicas:
                                 description: 'The number of managed servers to run
@@ -22713,7 +22713,6 @@ spec:
                               type: string
                           type: object
                       required:
-                      - clusters
                       - image
                       - imagePullSecrets
                       - logHome
