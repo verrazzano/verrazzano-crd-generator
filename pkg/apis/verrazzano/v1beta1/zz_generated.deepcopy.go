@@ -8,6 +8,7 @@
 package v1beta1
 
 import (
+	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	v1 "k8s.io/api/core/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
@@ -235,6 +236,13 @@ func (in *VerrazzanoCoherenceCluster) DeepCopyInto(out *VerrazzanoCoherenceClust
 	if in.Connections != nil {
 		in, out := &in.Connections, &out.Connections
 		*out = make([]VerrazzanoConnections, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
+	if in.Ports != nil {
+		in, out := &in.Ports, &out.Ports
+		*out = make([]coherencev1.NamedPortSpec, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
