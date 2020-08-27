@@ -165,7 +165,7 @@ type VerrazzanoCoherenceCluster struct {
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
 
 	// Coherence ports (optional)
-	Ports []cohv1.NamedPortSpec `json:"ports,omitempty"`
+	Ports []cohv1.NamedPortSpec `json:"ports,omitempty" yaml:"ports,omitempty"`
 
 	// Metrics configuration
 	Metrics VerrazzanoMetrics `json:"metrics,omitempty" yaml:"metrics,omitempty"`
