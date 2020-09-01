@@ -141,7 +141,7 @@ type VerrazzanoHelidon struct {
 	Logging VerrazzanoLogging `json:"logging,omitempty" yaml:"logging,omitempty"`
 
 	// Environment Variables
-	Envs []corev1.EnvVar
+	Envs []corev1.EnvVar `json:"envs,omitempty" yaml:"envs,omitempty"`
 }
 
 // +k8s:openapi-gen=true
