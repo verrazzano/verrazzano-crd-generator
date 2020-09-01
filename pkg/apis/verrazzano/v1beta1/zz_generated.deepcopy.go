@@ -370,6 +370,13 @@ func (in *VerrazzanoHelidon) DeepCopyInto(out *VerrazzanoHelidon) {
 	}
 	out.Metrics = in.Metrics
 	out.Logging = in.Logging
+	if in.Envs != nil {
+		in, out := &in.Envs, &out.Envs
+		*out = make([]v1.EnvVar, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
 	return
 }
 
