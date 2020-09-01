@@ -420,7 +420,7 @@ spec:
                             type: array
                         type: object
                       type: array
-                    envs:
+                    env:
                       description: Environment Variables
                       items:
                         description: EnvVar represents an environment variable present
