@@ -5,6 +5,7 @@ package v1beta1
 
 import (
 	"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v8"
+	cohv1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -138,6 +139,9 @@ type VerrazzanoHelidon struct {
 
 	// Logging configuration
 	Logging VerrazzanoLogging `json:"logging,omitempty" yaml:"logging,omitempty"`
+
+	// Environment Variables
+	Env []corev1.EnvVar `json:"env,omitempty" yaml:"env,omitempty"`
 }
 
 // +k8s:openapi-gen=true
@@ -162,6 +166,9 @@ type VerrazzanoCoherenceCluster struct {
 	// Connections configuration
 	// +x-kubernetes-list-type=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
+
+	// Coherence ports (optional)
+	Ports []cohv1.NamedPortSpec `json:"ports,omitempty" yaml:"ports,omitempty"`
 
 	// Metrics configuration
 	Metrics VerrazzanoMetrics `json:"metrics,omitempty" yaml:"metrics,omitempty"`

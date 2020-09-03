@@ -8,6 +8,7 @@
 package v1beta1
 
 import (
+	coherencev1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	v1 "k8s.io/api/core/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
@@ -239,6 +240,13 @@ func (in *VerrazzanoCoherenceCluster) DeepCopyInto(out *VerrazzanoCoherenceClust
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Ports != nil {
+		in, out := &in.Ports, &out.Ports
+		*out = make([]coherencev1.NamedPortSpec, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
 	out.Metrics = in.Metrics
 	out.Logging = in.Logging
 	return
@@ -362,6 +370,13 @@ func (in *VerrazzanoHelidon) DeepCopyInto(out *VerrazzanoHelidon) {
 	}
 	out.Metrics = in.Metrics
 	out.Logging = in.Logging
+	if in.Env != nil {
+		in, out := &in.Env, &out.Env
+		*out = make([]v1.EnvVar, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
 	return
 }
 
