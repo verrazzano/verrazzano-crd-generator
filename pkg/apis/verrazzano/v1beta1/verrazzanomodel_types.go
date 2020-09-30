@@ -199,7 +199,7 @@ type VerrazzanoGenericComponent struct {
 	Name string `json:"name" yaml:"name"`
 
 	// Definition of Kubernetes deployment
-	Deployments VerrazzanoDeployment `json:"deployments" yaml:"deployments"`
+	Deployments []VerrazzanoDeployment `json:"deployments" yaml:"deployments"`
 
 	// List of services required by Kubernetes deployment
 	// +x-kubernetes-list-type=set
