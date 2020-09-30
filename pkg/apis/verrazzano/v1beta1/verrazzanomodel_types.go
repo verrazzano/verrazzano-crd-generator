@@ -195,8 +195,11 @@ type VerrazzanoConfigMap struct {
 // VerrazzanoGenericComponent defines a single generic application for the model
 // +k8s:openapi-gen=true
 type VerrazzanoGenericComponent struct {
+	// The name of the Generic Component
+	Name string `json:"name" yaml:"name"`
+
 	// Definition of Kubernetes deployment
-	Deployment VerrazzanoDeployment `json:"deployment" yaml:"deployment"`
+	Deployments VerrazzanoDeployment `json:"deployments" yaml:"deployments"`
 
 	// List of services required by Kubernetes deployment
 	// +x-kubernetes-list-type=set
@@ -206,7 +209,7 @@ type VerrazzanoGenericComponent struct {
 	// +x-kubernetes-list-type=set
 	ConfigMaps []VerrazzanoConfigMap `json:"configMaps,omitempty yaml:"configMaps,omitempty"`
 
-	// Option to configure a Helidon application to use Fluentd for scraping the applications log.
+	// Option to configure a deployment to use Fluentd for scraping the applications log.
 	// By default, Fluentd is enabled.
 	FluentdEnabled *bool `json:"fluentdEnabled,omitempty" yaml:"fluentdEnabled,omitempty"`
 
