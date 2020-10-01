@@ -108,90 +108,6 @@ type VerrazzanoConnections struct {
 	Coherence []VerrazzanoCoherenceConnection `json:"coherence,omitempty" yaml:"coherence,omitempty"`
 }
 
-// VerrazzanoDeployment defines a Kubernetes deployment in the model
-// +k8s:openapi-gen=true
-type VerrazzanoDeployment struct {
-	// The name of the deployment
-	Name string `json:"name" yaml:"name"`
-
-	// Map of string keys and values that can be used to organize and categorize
-	// (scope and select) objects. May match selectors of replication controllers
-	// and services.
-	// More info: http://kubernetes.io/docs/user-guide/labels
-	Labels map[string]string `json:"labels,omitempty" yaml:"labels,omitempty"`
-
-	// Annotations is an unstructured key value map stored with a resource that may be
-	// set by external tools to store and retrieve arbitrary metadata. They are not
-	// queryable and should be preserved when modifying objects.
-	// More info: http://kubernetes.io/docs/user-guide/annotations
-	Annotations map[string]string `json:"annotations,omitempty" yaml:"annotations,omitempty"`
-
-	// The Kubernetes deployment specification
-	Spec appsv1.DeploymentSpec `json:"spec" yaml:"spec"`
-}
-
-// VerrazzanoService defines a Kubernetes service for a deployment in the model
-// +k8s:openapi-gen=true
-type VerrazzanoService struct {
-	// The name of the service
-	Name string `json:"name" yaml:"name"`
-
-	// Map of string keys and values that can be used to organize and categorize
-	// (scope and select) objects. May match selectors of replication controllers
-	// and services.
-	// More info: http://kubernetes.io/docs/user-guide/labels
-	Labels map[string]string `json:"labels,omitempty" yaml:"labels,omitempty"`
-
-	// Annotations is an unstructured key value map stored with a resource that may be
-	// set by external tools to store and retrieve arbitrary metadata. They are not
-	// queryable and should be preserved when modifying objects.
-	// More info: http://kubernetes.io/docs/user-guide/annotations
-	Annotations map[string]string `json:"annotations,omitempty" yaml:"annotations,omitempty"`
-
-	// The Kubernetes service specification
-	Spec corev1.ServiceSpec `json:"spec" yaml:"spec"`
-}
-
-// VerrazzanoConfigMap defines a Kubernetes config map for a deployment in the model
-// +k8s:openapi-gen=true
-type VerrazzanoConfigMap struct {
-	// The name of the service
-	Name string `json:"name" yaml:"name"`
-
-	// Map of string keys and values that can be used to organize and categorize
-	// (scope and select) objects. May match selectors of replication controllers
-	// and services.
-	// More info: http://kubernetes.io/docs/user-guide/labels
-	Labels map[string]string `json:"labels,omitempty" yaml:"labels,omitempty"`
-
-	// Annotations is an unstructured key value map stored with a resource that may be
-	// set by external tools to store and retrieve arbitrary metadata. They are not
-	// queryable and should be preserved when modifying objects.
-	// More info: http://kubernetes.io/docs/user-guide/annotations
-	Annotations map[string]string `json:"annotations,omitempty" yaml:"annotations,omitempty"`
-
-	// Immutable, if set to true, ensures that data stored in the ConfigMap cannot
-	// be updated (only object metadata can be modified).
-	// If not set to true, the field can be modified at any time.
-	// Defaulted to nil.
-	// This is an alpha field enabled by ImmutableEphemeralVolumes feature gate.
-	Immutable *bool `json:"immutable,omitempty" yaml:"immutable,omitempty"`
-
-	// Data contains the configuration data.
-	// Each key must consist of alphanumeric characters, '-', '_' or '.'.
-	// Values with non-UTF-8 byte sequences must use the BinaryData field.
-	// The keys stored in Data must not overlap with the keys in
-	// the BinaryData field, this is enforced during validation process.
-	Data map[string]string `json:"data,omitempty" yaml:"data,omitempty"`
-
-	// BinaryData contains the binary data.
-	// Each key must consist of alphanumeric characters, '-', '_' or '.'.
-	// BinaryData can contain byte sequences that are not in the UTF-8 range.
-	// The keys stored in BinaryData must not overlap with the ones in
-	// the Data field, this is enforced during validation process.
-	BinaryData map[string][]byte `json:"binaryData,omitempty" yaml:"binaryData,omitempty"`
-}
-
 // VerrazzanoGenericComponent defines a single generic application for the model
 // +k8s:openapi-gen=true
 type VerrazzanoGenericComponent struct {
@@ -199,15 +115,7 @@ type VerrazzanoGenericComponent struct {
 	Name string `json:"name" yaml:"name"`
 
 	// Definition of Kubernetes deployment
-	Deployments []VerrazzanoDeployment `json:"deployments" yaml:"deployments"`
-
-	// List of services required by Kubernetes deployment
-	// +x-kubernetes-list-type=set
-	Services []VerrazzanoService `json:"services,omitempty yaml:"services,omitempty"`
-
-	// List of config maps required by Kubernetes deployment
-	// +x-kubernetes-list-type=set
-	ConfigMaps []VerrazzanoConfigMap `json:"configMaps,omitempty yaml:"configMaps,omitempty"`
+	Deployment appsv1.DeploymentSpec `json:"deployment" yaml:"deployment"`
 
 	// Option to configure a deployment to use Fluentd for scraping the applications log.
 	// By default, Fluentd is enabled.
