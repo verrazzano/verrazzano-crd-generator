@@ -113,6 +113,10 @@ type VerrazzanoGenericComponent struct {
 	// The name of the Generic Component
 	Name string `json:"name" yaml:"name"`
 
+	// Number of desired pods. This is a pointer to distinguish between explicit
+	// zero and not specified. Defaults to 1.
+	Replicas *int32 `json:"replicas,omitempty" yaml:"replicas,omitempty"`
+
 	// Definition of Kubernetes deployment
 	Deployment corev1.PodSpec `json:"deployment" yaml:"deployment"`
 
