@@ -6,7 +6,6 @@ package v1beta1
 import (
 	cohv1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
 	"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v8"
-	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -115,7 +114,7 @@ type VerrazzanoGenericComponent struct {
 	Name string `json:"name" yaml:"name"`
 
 	// Definition of Kubernetes deployment
-	Deployment appsv1.DeploymentSpec `json:"deployment" yaml:"deployment"`
+	Deployment corev1.PodSpec `json:"deployment" yaml:"deployment"`
 
 	// Option to configure a deployment to use Fluentd for scraping the applications log.
 	// By default, Fluentd is enabled.
