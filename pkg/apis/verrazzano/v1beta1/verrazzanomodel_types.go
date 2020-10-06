@@ -4,14 +4,14 @@
 package v1beta1
 
 import (
-	"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v8"
 	cohv1 "github.com/verrazzano/verrazzano-crd-generator/pkg/apis/coherence/v1"
+	"github.com/verrazzano/verrazzano-crd-generator/pkg/apis/weblogic/v8"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// +k8s:openapi-gen=true
 // VerrazzanoRestConnection defines a REST connection
+// +k8s:openapi-gen=true
 type VerrazzanoRestConnection struct {
 	// The name of the target component
 	Target string `json:"target" yaml:"target"`
@@ -23,8 +23,8 @@ type VerrazzanoRestConnection struct {
 	EnvironmentVariableForPort string `json:"environmentVariableForPort" yaml:"environmentVariableForPort"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoIngressConnection defines a Ingress connection
+// +k8s:openapi-gen=true
 type VerrazzanoIngressConnection struct {
 	// The name of the ingress
 	Name string `json:"name" yaml:"name"`
@@ -38,14 +38,14 @@ type VerrazzanoIngressConnection struct {
 	Match []MatchRequest `json:"match,omitempty" yaml:"match,omitempty"`
 }
 
-// +k8s:openapi-gen=true
 // MatchRequest specifies a http match rule
+// +k8s:openapi-gen=true
 type MatchRequest struct {
 	Uri map[string]string `json:"uri,omitempty" yaml:"uri,omitempty"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoDatabaseConnection defines a Database conneciton
+// +k8s:openapi-gen=true
 type VerrazzanoDatabaseConnection struct {
 	// The name of the target component
 	Target string `json:"target" yaml:"target"`
@@ -54,8 +54,8 @@ type VerrazzanoDatabaseConnection struct {
 	DatasourceName string `json:"datasourceName" yaml:"datasourceName"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoCoherenceConnection defines a Coherence connection
+// +k8s:openapi-gen=true
 type VerrazzanoCoherenceConnection struct {
 	// The name of the target component
 	Target string `json:"target" yaml:"target"`
@@ -64,8 +64,8 @@ type VerrazzanoCoherenceConnection struct {
 	Address string `json:"address" yaml:"address"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoLogging defines the logging configuration
+// +k8s:openapi-gen=true
 type VerrazzanoLogging struct {
 	// The type of logging - one of: exporter, filebeat, TBD
 	Type string `json:"type" yaml:"type"`
@@ -74,8 +74,8 @@ type VerrazzanoLogging struct {
 	IndexPattern string `json:"indexPattern" yaml:"indexPattern"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoMetrics defines the metrics configuration for a component
+// +k8s:openapi-gen=true
 type VerrazzanoMetrics struct {
 	// The metrics endpoint (to be scraped)
 	Endpoint string `json:"endpoint" yaml:"endpoint"`
@@ -87,8 +87,8 @@ type VerrazzanoMetrics struct {
 	Interval string `json:"interval" yaml:"interval"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoConnections defines the connection for a component
+// +k8s:openapi-gen=true
 type VerrazzanoConnections struct {
 	// REST Connections
 	// +x-kubernetes-list-type=set
@@ -107,8 +107,30 @@ type VerrazzanoConnections struct {
 	Coherence []VerrazzanoCoherenceConnection `json:"coherence,omitempty" yaml:"coherence,omitempty"`
 }
 
+// VerrazzanoGenericComponent defines a single generic application for the model
 // +k8s:openapi-gen=true
+type VerrazzanoGenericComponent struct {
+	// The name of the Generic Component
+	Name string `json:"name" yaml:"name"`
+
+	// Number of desired pods. This is a pointer to distinguish between explicit
+	// zero and not specified. Defaults to 1.
+	Replicas *int32 `json:"replicas,omitempty" yaml:"replicas,omitempty"`
+
+	// Definition of Kubernetes deployment
+	Deployment corev1.PodSpec `json:"deployment" yaml:"deployment"`
+
+	// Option to configure a deployment to use Fluentd for scraping the applications log.
+	// By default, Fluentd is enabled.
+	FluentdEnabled *bool `json:"fluentdEnabled,omitempty" yaml:"fluentdEnabled,omitempty"`
+
+	// Connections configuration
+	// +x-kubernetes-list-type=set
+	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
+}
+
 // VerrazzanoHelidon defines a single Helidon application for the model
+// +k8s:openapi-gen=true
 type VerrazzanoHelidon struct {
 	// The name of the Helidon application
 	Name string `json:"name" yaml:"name"`
@@ -144,8 +166,8 @@ type VerrazzanoHelidon struct {
 	Env []corev1.EnvVar `json:"env,omitempty" yaml:"env,omitempty"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoCoherenceCluster defines a single coherence cluster for the model
+// +k8s:openapi-gen=true
 type VerrazzanoCoherenceCluster struct {
 	// The name of the coherence cluster
 	Name string `json:"name" yaml:"name"`
@@ -177,8 +199,8 @@ type VerrazzanoCoherenceCluster struct {
 	Logging VerrazzanoLogging `json:"logging,omitempty" yaml:"logging,omitempty"`
 }
 
-// +k8s:openapi-gen=true
 // VerrazzanoWebLogicDomain defines a single Weblogic domain for the model
+// +k8s:openapi-gen=true
 type VerrazzanoWebLogicDomain struct {
 	// The WebLogic domain name
 	Name string `json:"name" yaml:"name"`
@@ -223,6 +245,10 @@ type VerrazzanoModelSpec struct {
 	// The set of Helidon applications
 	// +x-kubernetes-list-type=set
 	HelidonApplications []VerrazzanoHelidon `json:"helidonApplications,omitempty" yaml:"helidonApplications,omitempty"`
+
+	// The set of generic components
+	// +x-kubernetes-list-type=set
+	GenericComponents []VerrazzanoGenericComponent `json:"genericComponents,omitempty" yaml:"genericComponents,omitempty"`
 }
 
 // VerrazzanoModelStatus defines the observed state of VerrazzanoModel
@@ -246,8 +272,8 @@ type VerrazzanoModel struct {
 	Status VerrazzanoModelStatus `json:"status,omitempty"`
 }
 
-// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // VerrazzanoModelList contains a list of VerrazzanoModel
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 type VerrazzanoModelList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
