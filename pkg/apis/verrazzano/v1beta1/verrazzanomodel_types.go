@@ -127,6 +127,9 @@ type VerrazzanoGenericComponent struct {
 	// Connections configuration
 	// +x-kubernetes-list-type=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
+
+	// Metrics configuration
+	Metrics VerrazzanoMetrics `json:"metrics,omitempty" yaml:"metrics,omitempty"`
 }
 
 // VerrazzanoHelidon defines a single Helidon application for the model
