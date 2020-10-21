@@ -81,10 +81,10 @@ type VerrazzanoMetrics struct {
 	Endpoint string `json:"endpoint" yaml:"endpoint"`
 
 	// The name of the secret containing the credentials to access the metrics endpoint
-	AuthSecret string `json:"authSecret" yaml:"authSecret"`
+	AuthSecret string `json:"authSecret,omitempty" yaml:"authSecret,omitempty"`
 
 	// The interval to scrape metrics
-	Interval string `json:"interval" yaml:"interval"`
+	Interval string `json:"interval,omitempty" yaml:"interval,omitempty"`
 }
 
 // VerrazzanoConnections defines the connection for a component
