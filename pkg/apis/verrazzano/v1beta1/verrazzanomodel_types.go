@@ -81,10 +81,10 @@ type VerrazzanoMetrics struct {
 	Endpoint string `json:"endpoint" yaml:"endpoint"`
 
 	// The name of the secret containing the credentials to access the metrics endpoint
-	AuthSecret string `json:"authSecret" yaml:"authSecret"`
+	AuthSecret string `json:"authSecret,omitempty" yaml:"authSecret,omitempty"`
 
 	// The interval to scrape metrics
-	Interval string `json:"interval" yaml:"interval"`
+	Interval string `json:"interval,omitempty" yaml:"interval,omitempty"`
 }
 
 // VerrazzanoConnections defines the connection for a component
@@ -127,6 +127,9 @@ type VerrazzanoGenericComponent struct {
 	// Connections configuration
 	// +x-kubernetes-list-type=set
 	Connections []VerrazzanoConnections `json:"connections,omitempty" yaml:"connections,omitempty"`
+
+	// Metrics configuration
+	Metrics VerrazzanoMetrics `json:"metrics,omitempty" yaml:"metrics,omitempty"`
 }
 
 // VerrazzanoHelidon defines a single Helidon application for the model

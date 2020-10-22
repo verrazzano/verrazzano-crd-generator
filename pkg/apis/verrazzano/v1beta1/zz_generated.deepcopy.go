@@ -369,6 +369,7 @@ func (in *VerrazzanoGenericComponent) DeepCopyInto(out *VerrazzanoGenericCompone
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	out.Metrics = in.Metrics
 	return
 }
 
