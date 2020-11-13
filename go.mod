@@ -5,7 +5,6 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.5.1
 	gopkg.in/yaml.v2 v2.2.8
-	istio.io/api v0.0.0-20200107183329-ed4b507c54e1
 	k8s.io/api v0.18.2
 	k8s.io/apimachinery v0.18.2
 	k8s.io/client-go v12.0.0+incompatible
@@ -20,8 +19,5 @@ replace (
 	k8s.io/client-go => k8s.io/client-go v0.18.2
 	k8s.io/code-generator => k8s.io/code-generator v0.18.2
 )
-
-// Pinned to istio 1.4.6
-replace istio.io/api => istio.io/api v0.0.0-20200107183329-ed4b507c54e1
 
 go 1.13
