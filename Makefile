@@ -24,6 +24,7 @@ go-build: go-mod
 .PHONY: go-mod
 go-mod:
 	$(GO) mod vendor
+	$(GO) mod tidy
 
 	# go mod vendor only copies the .go files.  Also need
 	# to populate the k8s.io/code-generator folder with the
