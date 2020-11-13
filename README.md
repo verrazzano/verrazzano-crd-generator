@@ -20,4 +20,4 @@ The build process generates several files which include a copyright header. To u
 generated files, modify the contents of the following files and build the project:
 * `hack/boilerplate.go.txt` - The contents of this file are added to files generated in `pkg/apis`.
 * `hack/boilerplate.yaml.txt` - The contents of this file are added to files generated in `deploy/crds`.
-* `hack/custom-header.txt` - The contents of this file are added to files generated in `pkg/client`, `pkg/clientcoherence`, `pkg/clientistio`, and `pkg/clientwks`.
+* `hack/custom-header.txt` - The contents of this file are added to files generated in `pkg/client`, `pkg/clientcoherence`, and `pkg/clientwks`.

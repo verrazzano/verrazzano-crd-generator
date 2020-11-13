@@ -29,12 +29,7 @@ type VerrazzanoIngressConnection struct {
 	// The name of the ingress
 	Name string `json:"name" yaml:"name"`
 
-	// Port number - defaults to 80
-	// Port uint `json:"port" yaml:"port"`
-
-	//See  verrazzano-crd-generator/pkg/apis/networking.istio.io/v1alpha3/virtual_service.go
-	//     https://github.com/istio/api/blob/master/networking/v1alpha3/virtual_service.gen.json
-	//     (istio.io/api/networking/v1alpha3/virtual_service.json)
+	// List of http match rules
 	Match []MatchRequest `json:"match,omitempty" yaml:"match,omitempty"`
 }
 

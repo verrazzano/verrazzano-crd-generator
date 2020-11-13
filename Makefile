@@ -9,14 +9,12 @@ CRD_DIR = deploy/crds
 go-build: go-mod
 	./hack/update-codegen.sh
 	./hack/update-codegen-weblogic.sh
-	./hack/update-codegen-istio.sh
 	./hack/update-codegen-coherence.sh
 	operator-sdk generate k8s
 	operator-sdk generate crds
 
 	# These crds are generated but not needed
 	rm deploy/crds/coherence.oracle.com*
-	rm deploy/crds/networking.istio.io*
 	rm deploy/crds/weblogic.oracle*
 
 	# Add copyright headers to the operator-sdk
@@ -26,6 +24,7 @@ go-build: go-mod
 .PHONY: go-mod
 go-mod:
 	$(GO) mod vendor
+	$(GO) mod tidy
 
 	# go mod vendor only copies the .go files.  Also need
 	# to populate the k8s.io/code-generator folder with the
