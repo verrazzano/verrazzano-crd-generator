@@ -17,6 +17,10 @@ go-build: go-mod
 	rm deploy/crds/coherence.oracle.com*
 	rm deploy/crds/weblogic.oracle*
 
+	# Define default value for protocol defined in ContainerPort
+        # as a workaround for https://github.com/kubernetes-sigs/controller-tools/issues/529
+	./hack/set-default-protocol.sh
+
 	# Add copyright headers to the operator-sdk
 	# generated CRDs
 	./hack/add-crd-header.sh

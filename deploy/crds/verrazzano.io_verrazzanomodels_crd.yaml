@@ -1683,6 +1683,7 @@ spec:
                                     protocol:
                                       description: Protocol for port. Must be UDP,
                                         TCP, or SCTP. Defaults to "TCP".
+                                      default: TCP
                                       type: string
                                   required:
                                   - containerPort
@@ -2890,6 +2891,7 @@ spec:
                                     protocol:
                                       description: Protocol for port. Must be UDP,
                                         TCP, or SCTP. Defaults to "TCP".
+                                      default: TCP
                                       type: string
                                   required:
                                   - containerPort
@@ -4102,6 +4104,7 @@ spec:
                                     protocol:
                                       description: Protocol for port. Must be UDP,
                                         TCP, or SCTP. Defaults to "TCP".
+                                      default: TCP
                                       type: string
                                   required:
                                   - containerPort
@@ -8462,6 +8465,7 @@ spec:
                                               description: Protocol for port. Must
                                                 be UDP, TCP, or SCTP. Defaults to
                                                 "TCP".
+                                              default: TCP
                                               type: string
                                           required:
                                           - containerPort
@@ -9853,6 +9857,7 @@ spec:
                                               description: Protocol for port. Must
                                                 be UDP, TCP, or SCTP. Defaults to
                                                 "TCP".
+                                              default: TCP
                                               type: string
                                           required:
                                           - containerPort
@@ -14058,6 +14063,7 @@ spec:
                                                 description: Protocol for port. Must
                                                   be UDP, TCP, or SCTP. Defaults to
                                                   "TCP".
+                                                default: TCP
                                                 type: string
                                             required:
                                             - containerPort
@@ -15475,6 +15481,7 @@ spec:
                                                 description: Protocol for port. Must
                                                   be UDP, TCP, or SCTP. Defaults to
                                                   "TCP".
+                                                default: TCP
                                                 type: string
                                             required:
                                             - containerPort
@@ -19872,6 +19879,7 @@ spec:
                                                 description: Protocol for port. Must
                                                   be UDP, TCP, or SCTP. Defaults to
                                                   "TCP".
+                                                default: TCP
                                                 type: string
                                             required:
                                             - containerPort
@@ -21289,6 +21297,7 @@ spec:
                                                 description: Protocol for port. Must
                                                   be UDP, TCP, or SCTP. Defaults to
                                                   "TCP".
+                                                default: TCP
                                                 type: string
                                             required:
                                             - containerPort
@@ -25361,6 +25370,7 @@ spec:
                                         protocol:
                                           description: Protocol for port. Must be
                                             UDP, TCP, or SCTP. Defaults to "TCP".
+                                          default: TCP
                                           type: string
                                       required:
                                       - containerPort
@@ -26679,6 +26689,7 @@ spec:
                                         protocol:
                                           description: Protocol for port. Must be
                                             UDP, TCP, or SCTP. Defaults to "TCP".
+                                          default: TCP
                                           type: string
                                       required:
                                       - containerPort
