@@ -6,12 +6,16 @@ CODEGEN_PATH = k8s.io/code-generator
 CRD_DIR = deploy/crds
 
 .PHONY: go-build
-go-build: go-mod
+go-build: controller-gen go-mod
 	./hack/update-codegen.sh
 	./hack/update-codegen-weblogic.sh
 	./hack/update-codegen-coherence.sh
-	operator-sdk generate k8s
-	operator-sdk generate crds
+
+	$(CONTROLLER_GEN) object:headerFile=hack/boilerplate.go.txt paths=./pkg/...
+	$(CONTROLLER_GEN) crd:crdVersions=v1 output:crd:artifacts:config=deploy/crds paths=./pkg/...
+	mv deploy/crds/verrazzano.io_verrazzanomodels.yaml deploy/crds/verrazzano.io_verrazzanomodels_crd.yaml
+	mv deploy/crds/verrazzano.io_verrazzanomanagedclusters.yaml deploy/crds/verrazzano.io_verrazzanomanagedclusters_crd.yaml
+	mv deploy/crds/verrazzano.io_verrazzanobindings.yaml deploy/crds/verrazzano.io_verrazzanobindings_crd.yaml
 
 	# These crds are generated but not needed
 	rm deploy/crds/coherence.oracle.com*
@@ -38,3 +42,12 @@ go-mod:
 	chmod +x vendor/${CODEGEN_PATH}/generate-groups.sh
 	cp -R ${GOPATH}/pkg/mod/${CODEGEN_PATH}@${codeGenVer}/cmd/defaulter-gen vendor/${CODEGEN_PATH}/cmd/defaulter-gen
 	chmod -R +w vendor/${CODEGEN_PATH}/cmd/defaulter-gen
+
++.PHONY: controller-gen
+controller-gen:
+	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.4.1
+ifeq (, $(shell which controller-gen))
+CONTROLLER_GEN=$(GOBIN)/controller-gen
+else
+CONTROLLER_GEN=$(shell which controller-gen)
+endif
