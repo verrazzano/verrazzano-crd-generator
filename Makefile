@@ -12,14 +12,14 @@ go-build: controller-gen go-mod
 	./hack/update-codegen-coherence.sh
 
 	$(CONTROLLER_GEN) object:headerFile=hack/boilerplate.go.txt paths=./pkg/...
-	$(CONTROLLER_GEN) crd:crdVersions=v1 output:crd:artifacts:config=deploy/crds paths=./pkg/...
-	mv deploy/crds/verrazzano.io_verrazzanomodels.yaml deploy/crds/verrazzano.io_verrazzanomodels_crd.yaml
-	mv deploy/crds/verrazzano.io_verrazzanomanagedclusters.yaml deploy/crds/verrazzano.io_verrazzanomanagedclusters_crd.yaml
-	mv deploy/crds/verrazzano.io_verrazzanobindings.yaml deploy/crds/verrazzano.io_verrazzanobindings_crd.yaml
+	$(CONTROLLER_GEN) crd:crdVersions=v1 output:crd:artifacts:config=${CRD_DIR} paths=./pkg/...
+	mv ${CRD_DIR}/verrazzano.io_verrazzanomodels.yaml ${CRD_DIR}/verrazzano.io_verrazzanomodels_crd.yaml
+	mv ${CRD_DIR}/verrazzano.io_verrazzanomanagedclusters.yaml ${CRD_DIR}/verrazzano.io_verrazzanomanagedclusters_crd.yaml
+	mv ${CRD_DIR}/verrazzano.io_verrazzanobindings.yaml ${CRD_DIR}/verrazzano.io_verrazzanobindings_crd.yaml
 
 	# These crds are generated but not needed
-	rm deploy/crds/coherence.oracle.com*
-	rm deploy/crds/weblogic.oracle*
+	rm ${CRD_DIR}/coherence.oracle.com*
+	rm ${CRD_DIR}/weblogic.oracle*
 
 	# Add copyright headers to the operator-sdk
 	# generated CRDs
