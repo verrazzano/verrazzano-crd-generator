@@ -5,6 +5,8 @@ GO ?= GO111MODULE=on go
 CODEGEN_PATH = k8s.io/code-generator
 CRD_DIR = deploy/crds
 
+export GOPATH ?= ${HOME}/go
+
 .PHONY: go-build
 go-build: controller-gen go-mod
 	./hack/update-codegen.sh

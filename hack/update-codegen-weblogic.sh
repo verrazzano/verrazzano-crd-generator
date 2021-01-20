@@ -7,7 +7,7 @@ set -o nounset
 set -o pipefail
 
 SCRIPT_ROOT=$(dirname $0)/..
-CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${SCRIPT_ROOT}; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../code-generator)}
+CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${SCRIPT_ROOT}; test -d ./vendor/k8s.io/code-generator 2>/dev/null && echo ./vendor/k8s.io/code-generator || echo ../code-generator)}
 
 GENERATED_ZZ_FILE=$SCRIPT_ROOT/pkg/apis/weblogic/v8/zz_generated.deepcopy.go
 echo Remove $GENERATED_ZZ_FILE file if exist
