@@ -177,6 +177,9 @@ type VerrazzanoCoherenceCluster struct {
 	// +x-kubernetes-list-type=set
 	ImagePullSecrets []corev1.LocalObjectReference `json:"imagePullSecrets,omitempty" yaml:"imagePullSecrets,omitempty"`
 
+	// The image:tag for coherence
+	CoherenceImage string `json:"coherenceImage" yaml:"coherenceImage,omitempty"`
+
 	// Coherence pof config
 	PofConfig string `json:"pofConfig" yaml:"pofConfig"`
 
