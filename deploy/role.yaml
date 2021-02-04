@@ -46,8 +46,6 @@ rules:
   - verrazzano.io
   resources:
   - '*'
-  - verrazzanomodels
-  - verrazzanobindings
   - verrazzanomanagedclusters
   - wlsdomains
   verbs:

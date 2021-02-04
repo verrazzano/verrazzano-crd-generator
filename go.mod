@@ -3,9 +3,7 @@ module github.com/verrazzano/verrazzano-crd-generator
 require (
 	github.com/operator-framework/operator-sdk v0.18.1
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.5.1
 	golang.org/x/tools v0.0.0-20200616195046-dc31b401abb5 // indirect
-	gopkg.in/yaml.v2 v2.2.8
 	k8s.io/api v0.18.2
 	k8s.io/apimachinery v0.18.2
 	k8s.io/client-go v12.0.0+incompatible
