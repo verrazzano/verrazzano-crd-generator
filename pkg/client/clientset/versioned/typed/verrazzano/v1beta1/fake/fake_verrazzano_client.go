@@ -15,16 +15,8 @@ type FakeVerrazzanoV1beta1 struct {
 	*testing.Fake
 }
 
-func (c *FakeVerrazzanoV1beta1) VerrazzanoBindings(namespace string) v1beta1.VerrazzanoBindingInterface {
-	return &FakeVerrazzanoBindings{c, namespace}
-}
-
 func (c *FakeVerrazzanoV1beta1) VerrazzanoManagedClusters(namespace string) v1beta1.VerrazzanoManagedClusterInterface {
 	return &FakeVerrazzanoManagedClusters{c, namespace}
-}
-
-func (c *FakeVerrazzanoV1beta1) VerrazzanoModels(namespace string) v1beta1.VerrazzanoModelInterface {
-	return &FakeVerrazzanoModels{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

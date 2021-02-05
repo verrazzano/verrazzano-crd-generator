@@ -11,12 +11,8 @@ import (
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
-	// VerrazzanoBindings returns a VerrazzanoBindingInformer.
-	VerrazzanoBindings() VerrazzanoBindingInformer
 	// VerrazzanoManagedClusters returns a VerrazzanoManagedClusterInformer.
 	VerrazzanoManagedClusters() VerrazzanoManagedClusterInformer
-	// VerrazzanoModels returns a VerrazzanoModelInformer.
-	VerrazzanoModels() VerrazzanoModelInformer
 }
 
 type version struct {
@@ -30,17 +26,7 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 	return &version{factory: f, namespace: namespace, tweakListOptions: tweakListOptions}
 }
 
-// VerrazzanoBindings returns a VerrazzanoBindingInformer.
-func (v *version) VerrazzanoBindings() VerrazzanoBindingInformer {
-	return &verrazzanoBindingInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
 // VerrazzanoManagedClusters returns a VerrazzanoManagedClusterInformer.
 func (v *version) VerrazzanoManagedClusters() VerrazzanoManagedClusterInformer {
 	return &verrazzanoManagedClusterInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
-// VerrazzanoModels returns a VerrazzanoModelInformer.
-func (v *version) VerrazzanoModels() VerrazzanoModelInformer {
-	return &verrazzanoModelInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

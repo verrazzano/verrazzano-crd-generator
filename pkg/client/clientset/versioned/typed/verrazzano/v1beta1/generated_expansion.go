@@ -5,8 +5,4 @@
 
 package v1beta1
 
-type VerrazzanoBindingExpansion interface{}
-
 type VerrazzanoManagedClusterExpansion interface{}
-
-type VerrazzanoModelExpansion interface{}

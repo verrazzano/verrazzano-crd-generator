@@ -1,4 +1,4 @@
-# Copyright (c) 2020, Oracle and/or its affiliates.
+# Copyright (c) 2020, 2021, Oracle and/or its affiliates.
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 GO ?= GO111MODULE=on go
@@ -8,18 +8,10 @@ CRD_DIR = deploy/crds
 .PHONY: go-build
 go-build: controller-gen go-mod
 	./hack/update-codegen.sh
-	./hack/update-codegen-weblogic.sh
-	./hack/update-codegen-coherence.sh
 
 	$(CONTROLLER_GEN) object:headerFile=hack/boilerplate.go.txt paths=./pkg/...
 	$(CONTROLLER_GEN) crd:crdVersions=v1 output:crd:artifacts:config=${CRD_DIR} paths=./pkg/...
-	mv ${CRD_DIR}/verrazzano.io_verrazzanomodels.yaml ${CRD_DIR}/verrazzano.io_verrazzanomodels_crd.yaml
 	mv ${CRD_DIR}/verrazzano.io_verrazzanomanagedclusters.yaml ${CRD_DIR}/verrazzano.io_verrazzanomanagedclusters_crd.yaml
-	mv ${CRD_DIR}/verrazzano.io_verrazzanobindings.yaml ${CRD_DIR}/verrazzano.io_verrazzanobindings_crd.yaml
-
-	# These crds are generated but not needed
-	rm ${CRD_DIR}/coherence.oracle.com*
-	rm ${CRD_DIR}/weblogic.oracle*
 
 	# Add copyright headers to the operator-sdk
 	# generated CRDs
