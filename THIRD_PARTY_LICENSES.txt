@@ -1,8 +1,7 @@
 github.com/verrazzano/verrazzano-crd-generator
 -------- Copyrights
 Copyright (c) 2020 Oracle America, Inc. and its affiliates. 
-# Copyright (c) 2020, 2021, Oracle and/or its affiliates.
-// Copyright (c) 2020, 2021, Oracle and/or its affiliates.
+# Copyright (c) 2020, Oracle and/or its affiliates.
 // Copyright (c) 2020, Oracle and/or its affiliates.
 
 ======== License
@@ -1557,4 +1556,4 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 ATTRIBUTION-HELPER-GENERATED:
-License file based on go.mod with md5 sum: 66ca8cb696200f130df95340379aef1c
+License file based on go.mod with md5 sum: 97792ee2b8c2014f3904ef303f3a96c8

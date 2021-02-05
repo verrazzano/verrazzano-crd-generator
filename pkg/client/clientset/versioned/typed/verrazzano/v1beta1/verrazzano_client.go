@@ -13,7 +13,9 @@ import (
 
 type VerrazzanoV1beta1Interface interface {
 	RESTClient() rest.Interface
+	VerrazzanoBindingsGetter
 	VerrazzanoManagedClustersGetter
+	VerrazzanoModelsGetter
 }
 
 // VerrazzanoV1beta1Client is used to interact with features provided by the verrazzano.io group.
@@ -21,8 +23,16 @@ type VerrazzanoV1beta1Client struct {
 	restClient rest.Interface
 }
 
+func (c *VerrazzanoV1beta1Client) VerrazzanoBindings(namespace string) VerrazzanoBindingInterface {
+	return newVerrazzanoBindings(c, namespace)
+}
+
 func (c *VerrazzanoV1beta1Client) VerrazzanoManagedClusters(namespace string) VerrazzanoManagedClusterInterface {
 	return newVerrazzanoManagedClusters(c, namespace)
+}
+
+func (c *VerrazzanoV1beta1Client) VerrazzanoModels(namespace string) VerrazzanoModelInterface {
+	return newVerrazzanoModels(c, namespace)
 }
 
 // NewForConfig creates a new VerrazzanoV1beta1Client for the given config.

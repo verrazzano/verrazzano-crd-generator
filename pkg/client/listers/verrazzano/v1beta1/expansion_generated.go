@@ -5,6 +5,14 @@
 
 package v1beta1
 
+// VerrazzanoBindingListerExpansion allows custom methods to be added to
+// VerrazzanoBindingLister.
+type VerrazzanoBindingListerExpansion interface{}
+
+// VerrazzanoBindingNamespaceListerExpansion allows custom methods to be added to
+// VerrazzanoBindingNamespaceLister.
+type VerrazzanoBindingNamespaceListerExpansion interface{}
+
 // VerrazzanoManagedClusterListerExpansion allows custom methods to be added to
 // VerrazzanoManagedClusterLister.
 type VerrazzanoManagedClusterListerExpansion interface{}
@@ -12,3 +20,11 @@ type VerrazzanoManagedClusterListerExpansion interface{}
 // VerrazzanoManagedClusterNamespaceListerExpansion allows custom methods to be added to
 // VerrazzanoManagedClusterNamespaceLister.
 type VerrazzanoManagedClusterNamespaceListerExpansion interface{}
+
+// VerrazzanoModelListerExpansion allows custom methods to be added to
+// VerrazzanoModelLister.
+type VerrazzanoModelListerExpansion interface{}
+
+// VerrazzanoModelNamespaceListerExpansion allows custom methods to be added to
+// VerrazzanoModelNamespaceLister.
+type VerrazzanoModelNamespaceListerExpansion interface{}

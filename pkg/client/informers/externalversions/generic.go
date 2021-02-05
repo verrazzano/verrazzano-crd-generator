@@ -40,8 +40,12 @@ func (f *genericInformer) Lister() cache.GenericLister {
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
 	// Group=verrazzano.io, Version=v1beta1
+	case v1beta1.SchemeGroupVersion.WithResource("verrazzanobindings"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Verrazzano().V1beta1().VerrazzanoBindings().Informer()}, nil
 	case v1beta1.SchemeGroupVersion.WithResource("verrazzanomanagedclusters"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Verrazzano().V1beta1().VerrazzanoManagedClusters().Informer()}, nil
+	case v1beta1.SchemeGroupVersion.WithResource("verrazzanomodels"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Verrazzano().V1beta1().VerrazzanoModels().Informer()}, nil
 
 	}
 
